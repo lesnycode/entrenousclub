@@ -91,13 +91,17 @@
       padding-block: clamp(2.25rem, 6vw, 5.5rem);
     }
     h1, h2, p { margin-top: 0; }
+    .club-name, .tagline { color: var(--blue); }
     .club-name {
       margin-bottom: .12em;
-      color: var(--blue);
       font: 650 clamp(3.1rem, 6.5vw, 5.25rem)/1.04 var(--sans);
       letter-spacing: -.035em;
     }
-    .tagline { margin-bottom: 1rem; color: var(--blue); font-style: italic; }
+    .tagline {
+      margin-bottom: 1rem;
+      font: normal 550 clamp(1.625rem, 2.8vw, 2.25rem)/1.18 var(--sans);
+      letter-spacing: -.02em;
+    }
     h1 { max-width: 25ch; margin-bottom: .8rem; font: 550 clamp(1.5rem, 2.45vw, 2rem)/1.19 var(--sans); letter-spacing: -.02em; text-wrap: balance; }
     .hero-copy { max-width: 37ch; margin-bottom: 1rem; }
     .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.35rem; }
