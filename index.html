@@ -78,11 +78,29 @@
     .sections p { margin-bottom: 0; }
     .sections a { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; }
     .foot p { margin: 0; color: var(--blue); font: italic 1.3rem/1.2 var(--serif); }
+    .about { padding-block: clamp(2.5rem, 6vw, 5rem); border-bottom: 1px solid var(--line); }
+    .about h2 { color: var(--blue); margin-bottom: 1.25rem; }
+    .about-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+      gap: 1.25rem clamp(2rem, 6vw, 5rem);
+      align-items: start;
+    }
+    .about-row + .about-row { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+    .about p { max-width: 65ch; margin-bottom: .9em; }
+    .about p:last-child { margin-bottom: 0; }
+    .about .opening { font: 500 clamp(1.55rem, 2.4vw, 2.1rem)/1.25 var(--serif); }
+    .about img { display: block; width: 100%; height: auto; }
+    .about .format { margin-top: 1.5rem; color: var(--blue); font-weight: 600; }
     @media (max-width: 720px) {
       .wrap { width: min(100% - 2rem, 34rem); }
       .hero { grid-template-columns: 1fr; gap: 1.7rem; }
       figure { max-width: 26rem; }
       .sections section { grid-template-columns: 1fr; gap: .55rem; }
+      .about-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 460px) {
+      .top nav { display: grid; grid-template-columns: auto auto; column-gap: 1.5rem; }
     }
     @media (max-width: 350px) {
       .top { gap: .6rem; }
@@ -101,6 +119,7 @@
     <nav aria-label="Навигация">
       <a href="#rencontres">Встречи</a>
       <a href="#materiaux">Материалы</a>
+      <a href="#about">Обо мне</a>
       <a href="https://t.me/entrenousclub">Telegram</a>
     </nav>
   </header>
@@ -133,6 +152,31 @@
         <a href="https://t.me/entrenousclub/26">Лексика и грамматика к теме «Дружба»</a>
       </section>
     </div>
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-row">
+        <div>
+          <h2 id="about-title">Обо мне</h2>
+          <p class="opening">Меня зовут Лиза, я пять лет жила во Франции, училась, работала, решала вопросики и дружила на французском языке.</p>
+        </div>
+        <img src="photos/liza.webp" width="1290" height="706" loading="lazy" alt="Портрет из кадра L’Oréal Paris">
+      </div>
+      <div class="about-row">
+        <div>
+          <p>Первый год во Франции был самый непростой. Я только закончила французскую гимназию в Петербурге и приехала учиться в Дижон в школу, куда обычно не берут иностранцев (у меня было мощное досье, <s>но это не помогло</s>). Я сразу столкнулась с ворохом сложностей, от поиска жилья и оформления документов до учёбы в очень конкурентной школе (два устных экзамена и одна диссертация каждую неделю, по результатам которых составляют рейтинг). Мне казалось, что я неплохо знаю французский, но для серьёзной учёбы и расслабленного дружеского общения этого было недостаточно. Я серьёзно задумалась о том, что идея учиться во Франции была не такой и хорошей.</p>
+          <p>Но когда рядом появились франкоговорящие друзья, которые терпеливо ждали, когда я подберу нужные слова, вежливо поправляли, когда действительно нужно, всё изменилось.</p>
+        </div>
+        <img src="photos/student-card.webp" width="1280" height="960" loading="lazy" alt="Студенческая карта Université Paris Dauphine за 2023–2024 год, частично закрытая маркером">
+      </div>
+      <div class="about-row">
+        <div>
+          <p>Через год я уже переехала в Париж, поступила там в хороший университет и нашла подработку, спустя три года поступила на крутую магистратуру и устроилась во французскую айти-компанию. Встретила множество интересных людей в самых разных сферах. И всего этого не вышло бы, не будь в самом начале пути друзей, с которыми было <strong><em>комфортно</em></strong> начинать говорить по-французски.</p>
+          <p>Я хочу собрать вместе людей, которые любят французский язык и будут поддерживать друг друга в его изучении. Для этого я собираю французский разговорный клуб <strong lang="fr">Entre nous.</strong></p>
+          <p>Основные принципы <s>бойцовского</s> клуба — структурированность, самовыражение, безнапряжность. Структурированность означает, что для каждой встречи я придумываю много разных мини-игр, чтобы всегда было о чём поговорить и не возникало неловких пауз. Самовыражение — участники как можно больше рассказывают о себе и своих интересах. И всё без напряга — без обязаловки, лишних исправлений, с возможностью взять паузу в любой момент.</p>
+          <p class="format">Уровень от A2, длительность два часа, группа до 8 человек.</p>
+        </div>
+        <img src="photos/bootcamp.webp" width="1170" height="574" loading="lazy" alt="Групповое фото участников буткемпа IBM Envizi">
+      </div>
+    </section>
   </main>
   <footer class="wrap foot">
     <p lang="fr">À très vite !</p>
