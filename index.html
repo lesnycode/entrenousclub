@@ -4,63 +4,100 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="EntreNous — французский разговорный клуб в Петербурге. Темы встреч, материалы и запись в Telegram.">
-  <meta name="theme-color" content="#f8f4e9">
+  <meta name="theme-color" content="#f3f4ef">
+  <link rel="icon" type="image/jpeg" href="club.jpg">
   <title>EntreNous — французский разговорный клуб в Петербурге</title>
   <style>
     :root {
       color-scheme: light;
-      --paper: #f8f4e9;
-      --ink: #202337;
+      --paper: #f3f4ef;
+      --ink: #25273a;
       --blue: #243f91;
-      --line: #d9d2c3;
+      --line: #cfd2c9;
       --serif: "Baskerville", "Georgia", serif;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.6 system-ui, sans-serif; }
-    a { color: inherit; }
-    a:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; }
+    ::selection { background: #d9e0f2; color: var(--ink); }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 1rem/1.6 system-ui, sans-serif;
+    }
+    a { color: var(--blue); text-underline-offset: .22em; }
     a:hover { text-decoration-thickness: 2px; }
-    .wrap { width: min(100% - 3rem, 74rem); margin-inline: auto; }
-    .top, .foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem 2rem; padding-block: 1.3rem; }
+    a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+    .wrap { width: min(100% - 3rem, 67rem); margin-inline: auto; }
+    .top, .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: .5rem 1.5rem;
+      padding-block: .8rem;
+    }
     .top { border-bottom: 1px solid var(--line); }
-    .foot { border-top: 1px solid var(--line); }
-    .wordmark { color: var(--blue); font: italic 700 1.9rem/1 var(--serif); text-decoration: none; }
-    nav { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; align-items: center; }
-    nav a, .foot a { font-size: .9rem; text-underline-offset: .25em; }
-    .hero { min-height: 36rem; display: grid; grid-template-columns: 1.13fr 1fr; align-items: center; gap: clamp(2rem, 7vw, 7rem); padding-block: clamp(2.8rem, 5vw, 4.5rem); }
-    .eyebrow { margin: 0 0 1.25rem; font-size: .75rem; letter-spacing: .19em; text-transform: uppercase; font-weight: 650; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { margin-bottom: .2em; color: var(--blue); font: italic 500 clamp(4.2rem, 10vw, 10rem)/.86 var(--serif); letter-spacing: -.08em; }
-    .lead { max-width: 29ch; margin-bottom: 1rem; font: 500 clamp(1.65rem, 3vw, 2.75rem)/1.13 var(--serif); }
-    .intro { max-width: 36ch; margin-bottom: 1.6rem; }
-    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.4rem; }
-    .button { display: inline-block; border-radius: 2px; padding: .7rem 1rem; color: white; background: var(--blue); font-weight: 650; text-decoration: none; }
+    .brand { display: inline-flex; flex: none; }
+    .brand img { display: block; width: 4rem; height: 4rem; border-radius: 50%; }
+    nav { display: flex; flex-wrap: wrap; gap: 0 clamp(.75rem, 3vw, 2rem); }
+    nav a, .foot a { display: inline-flex; min-height: 44px; align-items: center; font-size: .9rem; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+      align-items: center;
+      gap: clamp(2rem, 7vw, 6rem);
+      padding-block: clamp(2.25rem, 6vw, 5.5rem);
+    }
+    h1, h2, p { margin-top: 0; }
+    h1 {
+      margin-bottom: .24em;
+      color: var(--blue);
+      font: italic 500 clamp(3.6rem, 7vw, 6rem)/.98 var(--serif);
+      letter-spacing: -.035em;
+    }
+    .lead { max-width: 27ch; margin-bottom: .7rem; font: 500 clamp(1.7rem, 3vw, 2.45rem)/1.1 var(--serif); }
+    .intro { max-width: 39ch; margin-bottom: .6rem; }
+    .level { margin-bottom: 1.35rem; font-size: .9rem; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.35rem; }
+    .actions a { display: inline-flex; min-height: 44px; align-items: center; }
+    .button { padding: .55rem .95rem; color: white; background: var(--blue); font-weight: 650; text-decoration: none; }
     .button:hover { background: #192f72; }
-    .text-link { color: var(--blue); text-underline-offset: .22em; }
-    figure { position: relative; margin: 0 .6rem 0 0; padding: .65rem .65rem 0; background: #fffdf6; box-shadow: 0 1rem 2.5rem #43362722; transform: rotate(2deg); }
-    figure img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1.04; object-fit: cover; background: #dfd4c2; }
-    figcaption { padding: .55rem .15rem .45rem; text-align: right; color: var(--blue); font: italic 1.28rem/1.2 var(--serif); }
-    .sections { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem clamp(2rem, 7vw, 7rem); border-top: 1px solid var(--line); padding-block: clamp(2rem, 4.5vw, 4rem); }
-    h2 { margin-bottom: .4rem; font: 500 clamp(2.25rem, 4vw, 3.4rem)/1.05 var(--serif); }
-    .sections p { max-width: 42ch; margin-bottom: .7rem; }
+    figure { margin: 0; }
+    figure img { display: block; width: 100%; height: auto; background: #e3e5dd; }
+    figcaption { margin-top: .55rem; font-size: .8rem; }
+    .sections { border-top: 1px solid var(--line); }
+    .sections section {
+      display: grid;
+      grid-template-columns: minmax(9rem, .65fr) minmax(0, 1fr) minmax(0, 1fr);
+      align-items: baseline;
+      gap: .5rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+      padding-top: 1.4rem;
+      padding-bottom: 1.4rem;
+    }
+    h2 { margin-bottom: 0; font: 500 clamp(1.8rem, 3.5vw, 2.7rem)/1.05 var(--serif); }
+    .sections p { margin-bottom: 0; }
+    .sections a { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; }
     .foot p { margin: 0; color: var(--blue); font: italic 1.3rem/1.2 var(--serif); }
     @media (max-width: 720px) {
       .wrap { width: min(100% - 2rem, 34rem); }
-      .hero, .sections { grid-template-columns: 1fr; }
-      .hero { min-height: 0; gap: 2.5rem; }
-      figure { width: min(100% - .8rem, 28rem); margin-inline: auto; }
-      .top { align-items: flex-start; }
-      nav { gap: .35rem .9rem; justify-content: flex-end; }
+      .hero { grid-template-columns: 1fr; gap: 1.7rem; }
+      figure { max-width: 26rem; }
+      .sections section { grid-template-columns: 1fr; gap: .55rem; }
     }
     @media (max-width: 350px) {
-      h1 { font-size: 3.8rem; }
-      .top, .foot { align-items: flex-start; flex-direction: column; }
+      .top { gap: .6rem; }
+      .brand img { width: 3rem; height: 3rem; }
+      nav { gap: 0 .65rem; }
+      nav a { font-size: .825rem; }
+      h1 { font-size: 3.2rem; }
     }
   </style>
 </head>
 <body>
   <header class="wrap top" id="top">
-    <a href="#top" class="wordmark" lang="fr">EntreNous</a>
+    <a href="#top" class="brand" aria-label="EntreNous, начало страницы">
+      <img src="club.jpg" width="64" height="64" alt="">
+    </a>
     <nav aria-label="Навигация">
       <a href="#rencontres">Встречи</a>
       <a href="#materiaux">Материалы</a>
@@ -70,30 +107,30 @@
   <main class="wrap">
     <section class="hero" aria-labelledby="club">
       <div>
-        <p class="eyebrow">Санкт-Петербург · Французский A2+</p>
         <h1 id="club" lang="fr">EntreNous</h1>
         <p class="lead">Французский разговорный клуб в Петербурге</p>
         <p class="intro">Встречаемся в кафе и говорим по-французски о дружбе, кино и обо всём, что хочется обсудить за чашкой кофе.</p>
+        <p class="level">Уровень французского — A2 и выше.</p>
         <div class="actions">
-          <a class="button" href="https://t.me/entrenousclub">Анонсы в Telegram ↗</a>
-          <a class="text-link" href="https://t.me/lisalesny">Записаться ↗</a>
+          <a class="button" href="https://t.me/lisalesny">Записаться на встречу</a>
+          <a href="https://t.me/entrenousclub">Анонсы в Telegram</a>
         </div>
       </div>
       <figure>
-        <img src="cafe.jpg" width="960" height="1000" alt="Парижское кафе на углу улицы">
-        <figcaption lang="fr">On se retrouve autour d’un café ?</figcaption>
+        <img src="paris.jpg" width="761" height="800" alt="Триумфальная арка в Париже сквозь ветви деревьев">
+        <figcaption><a href="https://t.me/entrenousclub/41">Снимок из канала EntreNous</a></figcaption>
       </figure>
     </section>
     <div class="sections">
       <section id="rencontres">
         <h2>Встречи</h2>
         <p>Обсуждаем тему вечера, делимся историями и пробуем новые выражения в разговоре.</p>
-        <a class="text-link" href="https://t.me/s/entrenousclub">Посмотреть темы и даты ↗</a>
+        <a href="https://t.me/s/entrenousclub">Темы и даты встреч</a>
       </section>
       <section id="materiaux">
         <h2>Материалы</h2>
         <p>Лексика к встречам и короткие заметки по грамматике.</p>
-        <a class="text-link" href="https://t.me/entrenousclub/26">Лексика и грамматика к теме «Дружба» ↗</a>
+        <a href="https://t.me/entrenousclub/26">Лексика и грамматика к теме «Дружба»</a>
       </section>
     </div>
   </main>
