@@ -14,7 +14,7 @@
       --ink: #25273a;
       --blue: #243f91;
       --line: #cfd2c9;
-      --serif: "Baskerville", "Georgia", serif;
+      --sans: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", sans-serif;
     }
     * { box-sizing: border-box; }
     ::selection { background: #d9e0f2; color: var(--ink); }
@@ -22,7 +22,7 @@
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font: 1rem/1.6 system-ui, sans-serif;
+      font: 400 1.0625rem/1.55 var(--sans);
     }
     a { color: var(--blue); text-underline-offset: .22em; }
     a:hover { text-decoration-thickness: 2px; }
@@ -51,10 +51,10 @@
     h1 {
       margin-bottom: .24em;
       color: var(--blue);
-      font: italic 500 clamp(3.6rem, 7vw, 6rem)/.98 var(--serif);
+      font: 650 clamp(3.1rem, 6.5vw, 5.25rem)/1.04 var(--sans);
       letter-spacing: -.035em;
     }
-    .lead { max-width: 27ch; margin-bottom: .7rem; font: 500 clamp(1.7rem, 3vw, 2.45rem)/1.1 var(--serif); }
+    .lead { max-width: 25ch; margin-bottom: 1rem; font: 550 clamp(1.5rem, 2.45vw, 2rem)/1.19 var(--sans); letter-spacing: -.02em; text-wrap: balance; }
     .intro { max-width: 39ch; margin-bottom: .6rem; }
     .level { margin-bottom: 1.35rem; font-size: .9rem; }
     .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.35rem; }
@@ -63,7 +63,7 @@
     .button:hover { background: #192f72; }
     figure { margin: 0; }
     figure img { display: block; width: 100%; height: auto; background: #e3e5dd; }
-    figcaption { margin-top: .55rem; font-size: .8rem; }
+    figcaption { margin-top: .55rem; font-size: .875rem; }
     .sections { border-top: 1px solid var(--line); }
     .sections section {
       display: grid;
@@ -74,10 +74,10 @@
       padding-top: 1.4rem;
       padding-bottom: 1.4rem;
     }
-    h2 { margin-bottom: 0; font: 500 clamp(1.8rem, 3.5vw, 2.7rem)/1.05 var(--serif); }
+    h2 { margin-bottom: 0; font: 650 clamp(1.65rem, 3vw, 2.25rem)/1.16 var(--sans); letter-spacing: -.025em; }
     .sections p { margin-bottom: 0; }
     .sections a { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; }
-    .foot p { margin: 0; color: var(--blue); font: italic 1.3rem/1.2 var(--serif); }
+    .foot p { margin: 0; color: var(--blue); font: 500 1rem/1.4 var(--sans); }
     .about { padding-block: clamp(2.5rem, 6vw, 5rem); border-bottom: 1px solid var(--line); }
     .about h2 { color: var(--blue); margin-bottom: 1.25rem; }
     .about-row {
@@ -87,9 +87,9 @@
       align-items: start;
     }
     .about-row + .about-row { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
-    .about p { max-width: 65ch; margin-bottom: .9em; }
+    .about p { max-width: 62ch; margin-bottom: 1em; line-height: 1.62; }
     .about p:last-child { margin-bottom: 0; }
-    .about .opening { font: 500 clamp(1.55rem, 2.4vw, 2.1rem)/1.25 var(--serif); }
+    .about .opening { font: 500 clamp(1.35rem, 2vw, 1.75rem)/1.35 var(--sans); letter-spacing: -.012em; }
     .about img { display: block; width: 100%; height: auto; }
     .about .format { margin-top: 1.5rem; color: var(--blue); font-weight: 600; }
     @media (max-width: 720px) {
@@ -106,8 +106,8 @@
       .top { gap: .6rem; }
       .brand img { width: 3rem; height: 3rem; }
       nav { gap: 0 .65rem; }
-      nav a { font-size: .825rem; }
-      h1 { font-size: 3.2rem; }
+      nav a { font-size: .9rem; }
+      h1 { font-size: 3rem; }
     }
   </style>
 </head>
@@ -162,7 +162,8 @@
       </div>
       <div class="about-row">
         <div>
-          <p>Первый год во Франции был самый непростой. Я только закончила французскую гимназию в Петербурге и приехала учиться в Дижон в школу, куда обычно не берут иностранцев (у меня было мощное досье, <s>но это не помогло</s>). Я сразу столкнулась с ворохом сложностей, от поиска жилья и оформления документов до учёбы в очень конкурентной школе (два устных экзамена и одна диссертация каждую неделю, по результатам которых составляют рейтинг). Мне казалось, что я неплохо знаю французский, но для серьёзной учёбы и расслабленного дружеского общения этого было недостаточно. Я серьёзно задумалась о том, что идея учиться во Франции была не такой и хорошей.</p>
+          <p>Первый год во Франции был самый непростой. Я только закончила французскую гимназию в Петербурге и приехала учиться в Дижон в школу, куда обычно не берут иностранцев (у меня было мощное досье, <s>но это не помогло</s>). Я сразу столкнулась с ворохом сложностей, от поиска жилья и оформления документов до учёбы в очень конкурентной школе (два устных экзамена и одна диссертация каждую неделю, по результатам которых составляют рейтинг).</p>
+          <p>Мне казалось, что я неплохо знаю французский, но для серьёзной учёбы и расслабленного дружеского общения этого было недостаточно. Я серьёзно задумалась о том, что идея учиться во Франции была не такой и хорошей.</p>
           <p>Но когда рядом появились франкоговорящие друзья, которые терпеливо ждали, когда я подберу нужные слова, вежливо поправляли, когда действительно нужно, всё изменилось.</p>
         </div>
         <img src="photos/student-card.webp" width="1280" height="960" loading="lazy" alt="Студенческая карта Université Paris Dauphine за 2023–2024 год, частично закрытая маркером">
@@ -171,7 +172,10 @@
         <div>
           <p>Через год я уже переехала в Париж, поступила там в хороший университет и нашла подработку, спустя три года поступила на крутую магистратуру и устроилась во французскую айти-компанию. Встретила множество интересных людей в самых разных сферах. И всего этого не вышло бы, не будь в самом начале пути друзей, с которыми было <strong><em>комфортно</em></strong> начинать говорить по-французски.</p>
           <p>Я хочу собрать вместе людей, которые любят французский язык и будут поддерживать друг друга в его изучении. Для этого я собираю французский разговорный клуб <strong lang="fr">Entre nous.</strong></p>
-          <p>Основные принципы <s>бойцовского</s> клуба — структурированность, самовыражение, безнапряжность. Структурированность означает, что для каждой встречи я придумываю много разных мини-игр, чтобы всегда было о чём поговорить и не возникало неловких пауз. Самовыражение — участники как можно больше рассказывают о себе и своих интересах. И всё без напряга — без обязаловки, лишних исправлений, с возможностью взять паузу в любой момент.</p>
+          <p>Основные принципы <s>бойцовского</s> клуба — структурированность, самовыражение, безнапряжность.</p>
+          <p>Структурированность означает, что для каждой встречи я придумываю много разных мини-игр, чтобы всегда было о чём поговорить и не возникало неловких пауз.</p>
+          <p>Самовыражение — участники как можно больше рассказывают о себе и своих интересах.</p>
+          <p>И всё без напряга — без обязаловки, лишних исправлений, с возможностью взять паузу в любой момент.</p>
           <p class="format">Уровень от A2, длительность два часа, группа до 8 человек.</p>
         </div>
         <img src="photos/bootcamp.webp" width="1170" height="574" loading="lazy" alt="Групповое фото участников буткемпа IBM Envizi">
