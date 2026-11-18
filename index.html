@@ -3,10 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="EntreNous — французский разговорный клуб в Петербурге. Темы встреч, материалы и запись в Telegram.">
+  <meta name="description" content="EntreNous — французский разговорный клуб в Санкт-Петербурге для уровня A2 и выше. Встречи в кафе длятся два часа, в группе до восьми человек. Запись в Telegram.">
+  <link rel="canonical" href="https://entrenousclub.ru/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="EntreNous">
+  <meta property="og:url" content="https://entrenousclub.ru/">
+  <meta property="og:title" content="EntreNous — французский разговорный клуб в Петербурге">
+  <meta property="og:description" content="Встречаемся в кафе и говорим по-французски. Уровень от A2, два часа, до восьми человек в группе.">
+  <meta property="og:image" content="https://entrenousclub.ru/paris.jpg">
+  <meta property="og:image:alt" content="Триумфальная арка в Париже сквозь ветви деревьев">
   <meta name="theme-color" content="#f3f4ef">
   <link rel="icon" type="image/jpeg" href="club.jpg">
   <title>EntreNous — французский разговорный клуб в Петербурге</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://entrenousclub.ru/#organization",
+        "name": "EntreNous",
+        "description": "Французский разговорный клуб в Санкт-Петербурге для участников с уровнем A2 и выше.",
+        "url": "https://entrenousclub.ru/",
+        "logo": "https://entrenousclub.ru/club.jpg",
+        "sameAs": ["https://t.me/entrenousclub"],
+        "areaServed": { "@type": "City", "name": "Санкт-Петербург" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://entrenousclub.ru/#website",
+        "name": "EntreNous",
+        "url": "https://entrenousclub.ru/",
+        "inLanguage": "ru",
+        "publisher": { "@id": "https://entrenousclub.ru/#organization" }
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       color-scheme: light;
@@ -91,7 +125,7 @@
     .about p:last-child { margin-bottom: 0; }
     .about .opening { font: 500 clamp(1.35rem, 2vw, 1.75rem)/1.35 var(--sans); letter-spacing: -.012em; }
     .about img { display: block; width: 100%; height: auto; }
-    .about .format { margin-top: 1.5rem; color: var(--blue); font-weight: 600; }
+    .about .format { max-width: 26ch; margin-top: 0; color: var(--blue); font-weight: 600; }
     @media (max-width: 720px) {
       .wrap { width: min(100% - 2rem, 34rem); }
       .hero { grid-template-columns: 1fr; gap: 1.7rem; }
@@ -120,7 +154,7 @@
       <a href="#rencontres">Встречи</a>
       <a href="#materiaux">Материалы</a>
       <a href="#about">Обо мне</a>
-      <a href="https://t.me/entrenousclub">Telegram</a>
+      <a href="/faq/">Вопросы и ответы</a>
     </nav>
   </header>
   <main class="wrap">
@@ -129,9 +163,9 @@
         <h1 id="club" lang="fr">EntreNous</h1>
         <p class="lead">Французский разговорный клуб в Петербурге</p>
         <p class="intro">Встречаемся в кафе и говорим по-французски о дружбе, кино и обо всём, что хочется обсудить за чашкой кофе.</p>
-        <p class="level">Уровень французского — A2 и выше.</p>
+        <p class="level">Французский от A2 · 2 часа · до 8 человек</p>
         <div class="actions">
-          <a class="button" href="https://t.me/lisalesny">Записаться на встречу</a>
+          <a class="button" href="https://t.me/lisalesny">Записаться у Лизы</a>
           <a href="https://t.me/entrenousclub">Анонсы в Telegram</a>
         </div>
       </div>
@@ -143,7 +177,7 @@
     <div class="sections">
       <section id="rencontres">
         <h2>Встречи</h2>
-        <p>Обсуждаем тему вечера, делимся историями и пробуем новые выражения в разговоре.</p>
+        <p>Лиза готовит мини-игры по теме вечера. Можно рассказать свою историю, обсудить вопрос с группой или взять паузу.</p>
         <a href="https://t.me/s/entrenousclub">Темы и даты встреч</a>
       </section>
       <section id="materiaux">
@@ -171,14 +205,18 @@
       <div class="about-row">
         <div>
           <p>Через год я уже переехала в Париж, поступила там в хороший университет и нашла подработку, спустя три года поступила на крутую магистратуру и устроилась во французскую айти-компанию. Встретила множество интересных людей в самых разных сферах. И всего этого не вышло бы, не будь в самом начале пути друзей, с которыми было <strong><em>комфортно</em></strong> начинать говорить по-французски.</p>
+        </div>
+        <img src="photos/bootcamp.webp" width="1170" height="574" loading="lazy" alt="Групповое фото участников буткемпа IBM Envizi">
+      </div>
+      <div class="about-row">
+        <div>
           <p>Я хочу собрать вместе людей, которые любят французский язык и будут поддерживать друг друга в его изучении. Для этого я собираю французский разговорный клуб <strong lang="fr">Entre nous.</strong></p>
           <p>Основные принципы <s>бойцовского</s> клуба — структурированность, самовыражение, безнапряжность.</p>
           <p>Структурированность означает, что для каждой встречи я придумываю много разных мини-игр, чтобы всегда было о чём поговорить и не возникало неловких пауз.</p>
           <p>Самовыражение — участники как можно больше рассказывают о себе и своих интересах.</p>
           <p>И всё без напряга — без обязаловки, лишних исправлений, с возможностью взять паузу в любой момент.</p>
-          <p class="format">Уровень от A2, длительность два часа, группа до 8 человек.</p>
         </div>
-        <img src="photos/bootcamp.webp" width="1170" height="574" loading="lazy" alt="Групповое фото участников буткемпа IBM Envizi">
+        <a class="format" href="/faq/#stoimost">Сколько стоит встреча?</a>
       </div>
     </section>
   </main>

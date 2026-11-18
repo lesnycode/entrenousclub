@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-18T13:41:00.135Z",
+        "reason": "Editorial review: browser measured 40–77px between the last row of #about and its bottom border at 390px and 1280px; logical padding is applied."
+      }
+    ]
+  }
+}
