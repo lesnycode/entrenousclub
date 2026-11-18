@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="EntreNous — французский разговорный клуб в Санкт-Петербурге. Темы встреч и запись в Telegram.">
+  <meta name="description" content="Практикуйте разговорный французский в Санкт-Петербурге. На очных встречах EntreNous можно начать с коротких реплик и говорить в своём темпе.">
   <link rel="canonical" href="https://entrenousclub.ru/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="EntreNous">
   <meta property="og:url" content="https://entrenousclub.ru/">
   <meta property="og:title" content="EntreNous — французский разговорный клуб в Петербурге">
-  <meta property="og:description" content="Французский разговорный клуб в Санкт-Петербурге. Темы встреч и запись в Telegram.">
+  <meta property="og:description" content="Понимаете французский, а в разговоре трудно подобрать слова? В EntreNous можно начать с коротких реплик и говорить в своём темпе.">
   <meta property="og:image" content="https://entrenousclub.ru/photos/liza.webp">
   <meta property="og:image:alt" content="Портрет Лизы из кадра L’Oréal Paris">
   <meta name="theme-color" content="#f3f4ef">
@@ -37,6 +37,15 @@
         "url": "https://entrenousclub.ru/",
         "inLanguage": "ru",
         "publisher": { "@id": "https://entrenousclub.ru/#organization" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://entrenousclub.ru/#conversations",
+        "name": "Очные встречи французского разговорного клуба EntreNous",
+        "serviceType": "Групповая практика разговорного французского",
+        "url": "https://entrenousclub.ru/#rencontres",
+        "provider": { "@id": "https://entrenousclub.ru/#organization" },
+        "areaServed": { "@type": "City", "name": "Санкт-Петербург" }
       }
     ]
   }
@@ -82,13 +91,14 @@
       padding-block: clamp(2.25rem, 6vw, 5.5rem);
     }
     h1, h2, p { margin-top: 0; }
-    h1 {
+    .club-name {
       margin-bottom: .24em;
       color: var(--blue);
       font: 650 clamp(3.1rem, 6.5vw, 5.25rem)/1.04 var(--sans);
       letter-spacing: -.035em;
     }
-    .lead { max-width: 25ch; margin-bottom: 1rem; font: 550 clamp(1.5rem, 2.45vw, 2rem)/1.19 var(--sans); letter-spacing: -.02em; text-wrap: balance; }
+    h1 { max-width: 25ch; margin-bottom: .8rem; font: 550 clamp(1.5rem, 2.45vw, 2rem)/1.19 var(--sans); letter-spacing: -.02em; text-wrap: balance; }
+    .hero-copy { max-width: 37ch; margin-bottom: 1rem; }
     .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.35rem; }
     .actions a { display: inline-flex; min-height: 44px; align-items: center; }
     .button { padding: .55rem .95rem; color: white; background: var(--blue); font-weight: 650; text-decoration: none; }
@@ -107,6 +117,7 @@
     h2 { margin-bottom: 0; font: 650 clamp(1.65rem, 3vw, 2.25rem)/1.16 var(--sans); letter-spacing: -.025em; }
     .sections p { margin-bottom: 0; }
     .sections a { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; }
+    .section-links { display: grid; justify-items: start; }
     .foot p { margin: 0; color: var(--blue); font: 500 1rem/1.4 var(--sans); }
     .about { padding-block: clamp(2.5rem, 6vw, 5rem); border-bottom: 1px solid var(--line); }
     .about h2 { color: var(--blue); margin-bottom: 1.25rem; }
@@ -131,8 +142,8 @@
       .top nav a { color: var(--ink); text-decoration: none; }
       .section-shortcut { display: none; }
       .hero { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; padding-block: 1.75rem 2rem; }
-      h1 { margin-bottom: .55rem; font-size: clamp(3rem, 13vw, 4.25rem); }
-      .lead { max-width: 23ch; font-size: 1.5rem; margin-bottom: .85rem; }
+      .club-name { margin-bottom: .55rem; font-size: clamp(3rem, 13vw, 4.25rem); }
+      h1 { max-width: 23ch; font-size: 1.5rem; }
       .button { justify-content: center; padding: .72rem 1.2rem; }
       .sections { border: 0; }
       .sections section { grid-template-columns: 1fr; gap: .5rem; padding-block: 1.25rem; }
@@ -164,8 +175,9 @@
   <main class="wrap">
     <section class="hero" aria-labelledby="club">
       <div>
-        <h1 id="club" lang="fr">EntreNous</h1>
-        <p class="lead">Французский разговорный клуб в Петербурге</p>
+        <p class="club-name" lang="fr">EntreNous</p>
+        <h1 id="club">Французский разговорный клуб в Петербурге</h1>
+        <p class="hero-copy">Понимаете французский, а в разговоре трудно подобрать слова? Начните с короткой реплики и говорите в своём темпе.</p>
         <div class="actions">
           <a class="button" href="https://t.me/lisalesny">Записаться</a>
         </div>
@@ -174,14 +186,20 @@
     </section>
     <div class="sections">
       <section id="rencontres">
-        <h2>Встречи</h2>
-        <p>Лиза готовит мини-игры по теме вечера. Можно рассказать свою историю, обсудить вопрос с группой или взять паузу.</p>
-        <a href="https://t.me/s/entrenousclub">Темы и даты встреч</a>
+        <h2>Как проходят встречи</h2>
+        <p>Собираемся очно в Санкт-Петербурге. Лиза готовит вопросы и мини-игры по теме вечера. Можно ответить парой фраз, поделиться историей или взять паузу, если нужно время подобрать слова.</p>
+        <div class="section-links">
+          <a href="https://t.me/s/entrenousclub">Темы и даты встреч</a>
+          <a href="/faq/#uroven">Подойдёт ли мне клуб?</a>
+        </div>
       </section>
       <section id="materiaux">
         <h2>Материалы</h2>
-        <p>Лексика к встречам и короткие заметки по грамматике.</p>
-        <a href="https://t.me/entrenousclub/26">Лексика и грамматика к теме «Дружба»</a>
+        <p>Фразы для живого разговора, лексика к темам встреч и короткие заметки по грамматике.</p>
+        <div class="section-links">
+          <a href="/razgovornaya-praktika/">Как начать говорить по-французски</a>
+          <a href="https://t.me/entrenousclub/26">Лексика и грамматика к теме «Дружба»</a>
+        </div>
       </section>
     </div>
     <section class="about" id="about" aria-labelledby="about-title">
