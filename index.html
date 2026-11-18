@@ -13,7 +13,7 @@
   <meta property="og:description" content="Понимаете французский, а в разговоре трудно подобрать слова? В EntreNous можно начать с коротких реплик и говорить в своём темпе.">
   <meta property="og:image" content="https://entrenousclub.ru/photos/liza.webp">
   <meta property="og:image:alt" content="Мой портрет из кадра L’Oréal Paris">
-  <meta name="theme-color" content="#f3f4ef">
+  <meta name="theme-color" content="#eeede9">
   <link rel="icon" type="image/jpeg" href="club.jpg">
   <title>EntreNous — французский разговорный клуб в Петербурге</title>
   <script type="application/ld+json">
@@ -53,7 +53,7 @@
   <style>
     :root {
       color-scheme: light;
-      --paper: #f3f4ef;
+      --paper: #eeede9;
       --ink: #25273a;
       --blue: #243f91;
       --line: #cfd2c9;
@@ -91,24 +91,14 @@
       padding-block: clamp(2.25rem, 6vw, 5.5rem);
     }
     h1, h2, p { margin-top: 0; }
-    .club-name, .tagline { color: var(--blue); }
-    .club-name {
-      margin-bottom: .12em;
-      font: 650 clamp(3.1rem, 6.5vw, 5.25rem)/1.04 var(--sans);
-      letter-spacing: -.035em;
-    }
-    .tagline {
-      margin-bottom: 1rem;
-      font: normal 550 clamp(1.625rem, 2.8vw, 2.25rem)/1.18 var(--sans);
-      letter-spacing: -.02em;
-    }
+    .hero-logo { display: block; width: min(100%, 22rem); height: auto; margin-bottom: 1.25rem; }
     h1 { max-width: 25ch; margin-bottom: .8rem; font: 550 clamp(1.5rem, 2.45vw, 2rem)/1.19 var(--sans); letter-spacing: -.02em; text-wrap: balance; }
     .hero-copy { max-width: 37ch; margin-bottom: 1rem; }
     .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.35rem; }
     .actions a { display: inline-flex; min-height: 44px; align-items: center; }
     .button { padding: .55rem .95rem; color: white; background: var(--blue); font-weight: 650; text-decoration: none; }
     .button:hover { background: #192f72; }
-    .hero img { display: block; width: 100%; height: auto; background: #e3e5dd; }
+    .hero-portrait { display: block; width: 100%; height: auto; background: #e3e5dd; }
     .sections { border-top: 1px solid var(--line); }
     .sections section {
       display: grid;
@@ -147,7 +137,7 @@
       .top nav a { color: var(--ink); text-decoration: none; }
       .section-shortcut { display: none; }
       .hero { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; padding-block: 1.75rem 2rem; }
-      .club-name { font-size: clamp(3rem, 13vw, 4.25rem); }
+      .hero-logo { width: min(100%, 17.5rem); margin-inline: auto; }
       h1 { max-width: 23ch; font-size: 1.5rem; }
       .button { justify-content: center; padding: .72rem 1.2rem; }
       .sections { border: 0; }
@@ -180,15 +170,14 @@
   <main class="wrap">
     <section class="hero" aria-labelledby="club">
       <div>
-        <p class="club-name" lang="fr">EntreNous</p>
-        <p class="tagline" lang="fr">Soit dit en français.</p>
+        <img class="hero-logo" src="photos/entrenous-wordmark.png" width="379" height="249" lang="fr" alt="Entre nous. Soit dit en français.">
         <h1 id="club">Французский разговорный клуб в Петербурге</h1>
         <p class="hero-copy">Понимаете французский, а в разговоре трудно подобрать слова? Начните с короткой реплики и говорите в своём темпе.</p>
         <div class="actions">
           <a class="button" href="https://t.me/lisalesny">Записаться</a>
         </div>
       </div>
-      <img src="photos/liza.webp" width="1290" height="706" alt="Мой портрет из кадра L’Oréal Paris">
+      <img class="hero-portrait" src="photos/liza.webp" width="1290" height="706" alt="Мой портрет из кадра L’Oréal Paris">
     </section>
     <div class="sections">
       <section id="rencontres">
