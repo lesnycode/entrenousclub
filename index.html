@@ -127,21 +127,33 @@
     .about img { display: block; width: 100%; height: auto; }
     .about .format { max-width: 26ch; margin-top: 0; color: var(--blue); font-weight: 600; }
     @media (max-width: 720px) {
-      .wrap { width: min(100% - 2rem, 34rem); }
-      .hero { grid-template-columns: 1fr; gap: 1.7rem; }
-      figure { max-width: 26rem; }
-      .sections section { grid-template-columns: 1fr; gap: .55rem; }
-      .about-row { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 460px) {
-      .top nav { display: grid; grid-template-columns: auto auto; column-gap: 1.5rem; }
-    }
-    @media (max-width: 350px) {
-      .top { gap: .6rem; }
-      .brand img { width: 3rem; height: 3rem; }
-      nav { gap: 0 .65rem; }
-      nav a { font-size: .9rem; }
-      h1 { font-size: 3rem; }
+      .wrap { width: min(calc(100% - 2.5rem), 34rem); }
+      .top { padding-block: .5rem; border: 0; }
+      .brand { min-width: 44px; min-height: 44px; align-items: center; }
+      .brand img { width: 2.5rem; height: 2.5rem; }
+      .top nav { gap: 1.15rem; }
+      .top nav a { color: var(--ink); text-decoration: none; }
+      .section-shortcut { display: none; }
+      .hero { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; padding-block: 1.75rem 2rem; }
+      h1 { margin-bottom: .55rem; font-size: clamp(3rem, 13vw, 4.25rem); }
+      .lead { max-width: 23ch; font-size: 1.5rem; margin-bottom: .85rem; }
+      .intro { margin-bottom: .8rem; }
+      .level { color: #494d59; margin-bottom: 1.15rem; }
+      .button { justify-content: center; padding: .72rem 1.2rem; }
+      .hero figure img { aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 46%; }
+      .hero figure a { display: block; }
+      .sections { border: 0; }
+      .sections section { grid-template-columns: 1fr; gap: .5rem; padding-block: 1.25rem; }
+      .sections section:first-child { padding-top: 0; }
+      .sections section:last-child { border-bottom: 0; }
+      .sections h2, .about h2 { font-size: 1.65rem; }
+      .sections a { font-size: .95rem; }
+      .about { padding-block: 2.25rem; }
+      .about h2 { margin-bottom: .75rem; }
+      .about-row { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+      .about-row + .about-row { margin-top: 1.5rem; }
+      .about .format { display: inline-flex; align-items: center; min-height: 44px; }
+      .about p { line-height: 1.55; }
     }
   </style>
 </head>
@@ -151,8 +163,8 @@
       <img src="club.jpg" width="64" height="64" alt="">
     </a>
     <nav aria-label="Навигация">
-      <a href="#rencontres">Встречи</a>
-      <a href="#materiaux">Материалы</a>
+      <a class="section-shortcut" href="#rencontres">Встречи</a>
+      <a class="section-shortcut" href="#materiaux">Материалы</a>
       <a href="#about">Обо мне</a>
       <a href="/faq/">Вопросы и ответы</a>
     </nav>
@@ -162,16 +174,14 @@
       <div>
         <h1 id="club" lang="fr">EntreNous</h1>
         <p class="lead">Французский разговорный клуб в Петербурге</p>
-        <p class="intro">Встречаемся в кафе и говорим по-французски о дружбе, кино и обо всём, что хочется обсудить за чашкой кофе.</p>
-        <p class="level">Французский от A2 · 2 часа · до 8 человек</p>
+        <p class="intro">За чашкой кофе говорим по-французски о дружбе, кино и о том, чем живём.</p>
+        <p class="level">От A2 · 2 часа · до 8 человек</p>
         <div class="actions">
           <a class="button" href="https://t.me/lisalesny">Записаться у Лизы</a>
-          <a href="https://t.me/entrenousclub">Анонсы в Telegram</a>
         </div>
       </div>
       <figure>
-        <img src="paris.jpg" width="761" height="800" alt="Триумфальная арка в Париже сквозь ветви деревьев">
-        <figcaption><a href="https://t.me/entrenousclub/41">Снимок из канала EntreNous</a></figcaption>
+        <a href="https://t.me/entrenousclub/41" aria-label="Открыть снимок Триумфальной арки в канале EntreNous"><img src="paris.jpg" width="761" height="800" alt="Триумфальная арка в Париже сквозь ветви деревьев"></a>
       </figure>
     </section>
     <div class="sections">
