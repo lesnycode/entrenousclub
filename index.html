@@ -52,35 +52,26 @@
   </script>
   <link rel="stylesheet" href="/inner.css">
   <style>
-    .landing { padding: 0; }
-    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); max-width: 96rem; margin-inline: auto; }
-    .hero-content { align-self: center; padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 4vw, 4rem); padding-left: max(1.5rem, calc((100vw - 70rem) / 2)); }
-    .hero-logo { display: block; width: min(100%, 13.5rem); height: auto; margin-bottom: 1.2rem; }
-    .hero h1 { max-width: 19ch; font-size: clamp(2rem, 3.35vw, 3.35rem); }
-    .hero-copy { max-width: 39ch; margin-block: 1rem 1.4rem; }
-    .meeting { border-left: 3px solid var(--blue); padding-left: 1rem; margin-bottom: 1.15rem; font-size: 1rem; }
-    .meeting strong { display: block; color: var(--blue); font-size: 1.15rem; }
-    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.2rem; }
-    .button { justify-content: center; padding: .72rem 1.5rem; color: white; background: var(--blue); border-radius: 2rem; font-weight: 600; text-decoration: none; }
+    main { padding-block: 0; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); padding-block: clamp(2rem, 4.5vw, 4rem); }
+    .hero-logo { display: block; width: min(100%, 16rem); height: auto; margin-bottom: 1rem; }
+    .hero h1 { max-width: 22ch; font-size: clamp(1.875rem, 3vw, 2.75rem); }
+    .hero-copy { margin-block: .85rem 1.35rem; max-width: 42ch; }
+    .meeting { margin-bottom: 1rem; }
+    .meeting strong { display: block; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.25rem; }
+    .button { justify-content: center; padding: .6rem 1.35rem; color: white; background: var(--blue); border-radius: .4rem; font-weight: 600; text-decoration: none; }
     .button:hover { background: #213e7b; }
-    .hero-portrait { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: 57% center; }
-    .sections { padding-block: clamp(2rem, 5vw, 4.5rem); }
-    .sections section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); align-items: baseline; gap: .6rem 2rem; }
+    .hero-portrait { display: block; width: 100%; height: auto; aspect-ratio: 1.42; object-fit: cover; object-position: center; border-radius: .45rem; }
+    .sections section, .about { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.55fr); align-items: baseline; gap: .75rem 2.5rem; padding-block: clamp(1.6rem, 3vw, 2.5rem); border-top: 1px solid var(--line); }
     .section-links { grid-column: 2; }
-    .practice-link { padding-top: .75rem; border-top: 1px solid var(--line); margin-top: 1.25rem; }
-    .sections h2, .about h2 { font-size: clamp(1.65rem, 3vw, 2.6rem); }
-    .about { color: white; background: var(--blue); padding-block: clamp(2rem, 5vw, 4.5rem); }
-    .about .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: .85rem 2rem; align-items: baseline; }
-    .about p { font-size: clamp(1.0625rem, 1.6vw, 1.3rem); line-height: 1.5; }
-    @media (min-width: 96rem) {
-      .hero-content { padding-left: 13rem; }
-    }
+    .practice-link { border-top: 1px solid var(--line); padding-block: .6rem; }
+    .about h2, .sections h2 { color: var(--blue); }
     @media (max-width: 720px) {
-      .hero { grid-template-columns: minmax(0, 1fr); }
-      .hero-content { width: min(calc(100% - 2.25rem), 36rem); margin-inline: auto; padding: 1.4rem 0 1.65rem; }
-      .hero-logo { width: min(100%, 12rem); margin: 0 auto 1.15rem; }
-      .hero-portrait { height: auto; max-height: 24rem; }
-      .sections section, .about .wrap { grid-template-columns: 1fr; }
+      .hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-block: 1.65rem; }
+      .hero-logo { width: min(100%, 14.5rem); margin: 0 auto 1.15rem; }
+      .hero-portrait { aspect-ratio: auto; }
+      .sections section, .about { grid-template-columns: 1fr; gap: .55rem; }
       .section-links { grid-column: auto; }
     }
   </style>
@@ -96,9 +87,9 @@
       <a href="/razgovornaya-praktika/">Практика</a>
     </nav>
   </header>
-  <main class="landing">
+  <main class="wrap">
     <section class="hero" aria-labelledby="club">
-      <div class="hero-content">
+      <div>
         <img class="hero-logo" src="photos/entrenous-wordmark.png" width="379" height="249" lang="fr" alt="Entre nous. Soit dit en français.">
         <h1 id="club">Французский разговорный клуб в Петербурге</h1>
         <p class="hero-copy">Понимаете французский, а в разговоре трудно подобрать слова? Начните с короткой реплики и говорите в своём темпе.</p>
@@ -110,7 +101,7 @@
       </div>
       <img class="hero-portrait" src="photos/liza.webp" width="1290" height="706" alt="Мой портрет из кадра L’Oréal Paris">
     </section>
-    <div class="wrap sections">
+    <div class="sections">
       <section id="rencontres">
         <h2>Как проходят встречи</h2>
         <p>Собираемся очно в Санкт-Петербурге. Я готовлю вопросы и мини-игры по теме вечера. Можно ответить парой фраз, поделиться историей или взять паузу, если нужно время подобрать слова.</p>
@@ -123,10 +114,8 @@
       </div>
     </div>
     <section class="about" id="about" aria-labelledby="about-title">
-      <div class="wrap">
-        <h2 id="about-title">Обо мне</h2>
-        <p>Меня зовут Лиза, и я пять лет жила во Франции, где училась и работала. Мне стало легче говорить, когда друзья давали мне время подобрать слова. Я создала EntreNous, чтобы в Петербурге тоже можно было говорить по-французски в своём темпе.</p>
-      </div>
+      <h2 id="about-title">Обо мне</h2>
+      <p>Меня зовут Лиза, и я пять лет жила во Франции, где училась и работала. Мне стало легче говорить, когда друзья давали мне время подобрать слова. Я создала EntreNous, чтобы в Петербурге тоже можно было говорить по-французски в своём темпе.</p>
     </section>
   </main>
   <footer class="wrap foot">
