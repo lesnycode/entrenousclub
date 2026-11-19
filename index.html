@@ -11,8 +11,8 @@
   <meta property="og:url" content="https://entrenousclub.ru/">
   <meta property="og:title" content="EntreNous — французский разговорный клуб в Петербурге">
   <meta property="og:description" content="Понимаете французский, а в разговоре трудно подобрать слова? В EntreNous можно начать с коротких реплик и говорить в своём темпе.">
-  <meta property="og:image" content="https://entrenousclub.ru/photos/liza.webp">
-  <meta property="og:image:alt" content="Мой портрет из кадра L’Oréal Paris">
+  <meta property="og:image" content="https://entrenousclub.ru/photos/liza-portrait.jpg">
+  <meta property="og:image:alt" content="Мой портрет на улице">
   <meta name="theme-color" content="#eeede9">
   <link rel="icon" type="image/jpeg" href="club.jpg">
   <title>EntreNous — французский разговорный клуб в Петербурге</title>
@@ -86,15 +86,13 @@
     .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.25rem; }
     .button { justify-content: center; padding: .6rem 1.35rem; color: white; background: var(--blue); border-radius: .4rem; font-weight: 600; text-decoration: none; }
     .button:hover { background: #213e7b; }
-    .hero-portrait { display: block; width: 100%; height: auto; aspect-ratio: 1.42; object-fit: cover; object-position: center; border-radius: .45rem; }
+    .hero-portrait { display: block; justify-self: center; width: 100%; max-width: 33rem; height: auto; border-radius: 17%; }
     .sections section, .about { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.55fr); align-items: baseline; gap: .75rem 2.5rem; padding-block: clamp(1.6rem, 3vw, 2.5rem); border-top: 1px solid var(--line); }
     .section-links { grid-column: 2; }
-    .practice-link { border-top: 1px solid var(--line); padding-block: .6rem; }
     .about h2, .sections h2 { color: var(--blue); }
     @media (max-width: 720px) {
       .hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-block: 1.65rem; }
       .hero-logo { width: min(100%, 14.5rem); margin: 0 auto 1.15rem; }
-      .hero-portrait { aspect-ratio: auto; }
       .sections section, .about { grid-template-columns: 1fr; gap: .55rem; }
       .section-links { grid-column: auto; }
     }
@@ -107,8 +105,7 @@
     </a>
     <nav aria-label="Навигация">
       <a href="/#rencontres">Встречи</a>
-      <a href="/faq/">Первая встреча</a>
-      <a href="/razgovornaya-praktika/">Практика</a>
+      <a href="/faq/">Кому подойдёт?</a>
     </nav>
   </header>
   <main class="wrap">
@@ -134,7 +131,7 @@
           <a href="https://t.me/s/entrenousclub">Темы и даты встреч</a>
         </div>
       </div>
-      <img class="hero-portrait" src="photos/liza.webp" width="1290" height="706" alt="Мой портрет из кадра L’Oréal Paris">
+      <img class="hero-portrait" src="photos/liza-portrait.jpg" width="529" height="529" alt="Мой портрет на улице">
     </section>
     <div class="sections">
       <section id="rencontres">
@@ -144,9 +141,6 @@
           <a href="/faq/#uroven">Подойдёт ли мне клуб?</a>
         </div>
       </section>
-      <div id="materiaux" class="practice-link">
-        <a href="/razgovornaya-praktika/">Как начать говорить по-французски</a>
-      </div>
     </div>
     <section class="about" id="about" aria-labelledby="about-title">
       <h2 id="about-title">Обо мне</h2>

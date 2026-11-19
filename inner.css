@@ -19,7 +19,7 @@ header, footer { display: flex; align-items: center; justify-content: space-betw
 header { border-bottom: 1px solid var(--line); }
 footer { border-top: 1px solid var(--line); }
 footer p { margin: 0; color: var(--blue); }
-header a, footer a, .actions a, .section-links a, .practice-link a, .next a {
+header a, footer a, .actions a, .section-links a {
   display: inline-flex; align-items: center; min-height: 44px;
 }
 header a, footer a { font-size: .9375rem; }
@@ -35,7 +35,7 @@ h2 { font-size: clamp(1.3rem, 2vw, 1.65rem); font-weight: 600; }
 main { padding-block: clamp(2rem, 5vw, 4rem); }
 main > h1, article h1 { max-width: 24ch; margin-bottom: .8em; color: var(--blue); }
 p { max-width: 60ch; }
-section, [id="materiaux"] { scroll-margin-top: 1.25rem; }
+section { scroll-margin-top: 1.25rem; }
 @media (max-width: 720px) {
   .wrap { width: min(calc(100% - 2.25rem), 36rem); }
   header { gap: .25rem .5rem; }
