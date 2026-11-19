@@ -99,19 +99,8 @@
     .hero-logo { display: block; width: min(100%, 14rem); height: auto; margin-block-end: .9rem; margin-inline-start: -1.75rem; }
     .hero h1 { font-size: clamp(1.875rem, 3.75vw, 2.75rem); line-height: 1.1; letter-spacing: -.033em; }
     .hero-break-narrow { display: none; }
-    .approach ul { display: grid; gap: .55rem; margin: 0; padding: 0; list-style: none; line-height: 1.48; }
-    .approach li {
-      position: relative; isolation: isolate;
-      padding: .8rem 1rem .8rem 2.85rem;
-      background: #f8f7f2; border: 1px solid #d3d8e3; border-radius: .8rem;
-    }
-    .approach li::before {
-      content: ""; position: absolute; inset-block-start: .8rem; inset-inline-start: .75rem;
-      width: 1.5rem; aspect-ratio: 1; background: var(--outline-image) center / contain no-repeat;
-      mix-blend-mode: darken; transform: rotate(-14deg); opacity: .72; pointer-events: none;
-    }
-    .approach li:nth-child(2)::before { transform: rotate(21deg); }
-    .approach li:nth-child(3)::before { transform: rotate(-32deg); }
+    .approach ul { display: grid; gap: .55rem; margin: 0; padding-inline-start: 1.2em; line-height: 1.48; }
+    .approach li::marker { color: var(--blue); }
     .approach strong { font-weight: 600; }
     .meeting {
       position: relative; isolation: isolate; overflow: hidden;
@@ -158,8 +147,6 @@
       .top nav { column-gap: .8rem; }
       .hero-break-wide { display: none; }
       .hero-break-narrow { display: initial; }
-      .approach li { padding-inline: 2.45rem .75rem; }
-      .approach li::before { inset-inline-start: .55rem; }
     }
   </style>
 </head>
@@ -194,6 +181,14 @@
       </div>
       <img class="hero-portrait" src="photos/liza-portrait.jpg" width="529" height="529" alt="Мой портрет на улице">
     </section>
+    <section class="wrap approach" aria-labelledby="approach-title">
+      <h2 id="approach-title">Подход клуба</h2>
+      <ul>
+        <li><strong>Структура.</strong> Встречи состоят из продуманных мини-игр, поэтому всегда есть о чём поговорить и не бывает неловких пауз.</li>
+        <li><strong>Самовыражение.</strong> Участники рассказывают о себе и о том, что им интересно.</li>
+        <li><strong>Комфорт.</strong> Участники сами выбирают, насколько активно участвовать, и могут взять паузу в любой момент. Исправления я делаю только по просьбе.</li>
+      </ul>
+    </section>
     <div class="wrap sections">
       <section id="rencontres">
         <h2>Как проходят встречи</h2>
@@ -203,14 +198,6 @@
         </div>
       </section>
     </div>
-    <section class="wrap approach" aria-labelledby="approach-title">
-      <h2 id="approach-title">Подход клуба</h2>
-      <ul role="list">
-        <li><strong>Структура.</strong> Встречи состоят из продуманных мини-игр, поэтому всегда есть о чём поговорить и не бывает неловких пауз.</li>
-        <li><strong>Самовыражение.</strong> Участники рассказывают о себе и о том, что им интересно.</li>
-        <li><strong>Комфорт.</strong> Участники сами выбирают, насколько активно участвовать, и могут взять паузу в любой момент. Исправления я делаю только по просьбе.</li>
-      </ul>
-    </section>
     <section class="wrap about" id="about" aria-labelledby="about-title">
       <h2 id="about-title">Обо мне</h2>
       <p>Меня зовут Лиза, и я пять лет жила во Франции, где училась и работала. Мне стало легче говорить, когда друзья давали мне время подобрать слова. Я создала EntreNous, чтобы в Петербурге тоже можно было говорить по-французски в своём темпе.</p>
