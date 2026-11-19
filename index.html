@@ -57,8 +57,25 @@
     .hero-logo { display: block; width: min(100%, 16rem); height: auto; margin-bottom: 1rem; }
     .hero h1 { max-width: 22ch; font-size: clamp(1.875rem, 3vw, 2.75rem); }
     .hero-copy { margin-block: .85rem 1.35rem; max-width: 42ch; }
-    .meeting { margin-bottom: 1rem; }
-    .meeting strong { display: block; }
+    .meeting {
+      position: relative; isolation: isolate; overflow: hidden;
+      display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center;
+      gap: clamp(.75rem, 2vw, 1.25rem); max-width: 29rem; margin-bottom: 1rem;
+      padding: 1.15rem clamp(.85rem, 2vw, 1.4rem);
+      background: #fbfaf5; color: var(--blue); border: 1px solid #bbc6dc; border-radius: 1.1rem;
+    }
+    .meeting-date, .meeting-details { display: grid; align-content: center; }
+    .meeting-date { text-align: center; font-size: 1rem; line-height: 1.2; font-weight: 600; }
+    .meeting-day { font-size: clamp(2.65rem, 4vw, 3.4rem); line-height: 1; letter-spacing: -.055em; }
+    .meeting-details { border-inline-start: 1px solid #bbc6dc; padding-inline-start: clamp(.75rem, 2vw, 1.25rem); font-size: 1rem; line-height: 1.4; }
+    .meeting-details strong { margin-bottom: .25rem; padding-inline-end: 1.1rem; }
+    .meeting-wave { position: absolute; z-index: -1; top: -.4rem; right: -.45rem; width: 3.4rem; height: 2.4rem; color: #859bc8; }
+    @media (prefers-reduced-motion: no-preference) {
+      .meeting-wave { animation: meeting-wave 1.8s ease-in-out .25s 2; }
+    }
+    @keyframes meeting-wave {
+      50% { transform: translate(-3px, 3px) rotate(-6deg); }
+    }
     .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.25rem; }
     .button { justify-content: center; padding: .6rem 1.35rem; color: white; background: var(--blue); border-radius: .4rem; font-weight: 600; text-decoration: none; }
     .button:hover { background: #213e7b; }
@@ -93,7 +110,17 @@
         <img class="hero-logo" src="photos/entrenous-wordmark.png" width="379" height="249" lang="fr" alt="Entre nous. Soit dit en français.">
         <h1 id="club">Французский разговорный клуб в Петербурге</h1>
         <p class="hero-copy">Понимаете французский, а в разговоре трудно подобрать слова? Начните с короткой реплики и говорите в своём темпе.</p>
-        <p class="meeting"><strong>Встреча в субботу, <time datetime="2026-11-21T15:00:00+03:00">21 ноября</time></strong>15:00–17:00 · Кофейня «Коллектив Кофе»<br>Сапёрный переулок, 16</p>
+        <div class="meeting" role="group" aria-label="Ближайшая встреча">
+          <time class="meeting-date" datetime="2026-11-21T15:00:00+03:00"><span class="meeting-day">21</span> ноября</time>
+          <p class="meeting-details">
+            <strong>Суббота, 15:00–17:00</strong>
+            <span>Кофейня «Коллектив Кофе»</span>
+            <span>Сапёрный переулок, 16</span>
+          </p>
+          <svg class="meeting-wave" viewBox="0 0 68 48" aria-hidden="true" focusable="false">
+            <path d="M5 -9C6 12 24 1 29 18S48 44 57 30Q63 19 78 25" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div class="actions">
           <a class="button" href="https://t.me/lisalesny">Записаться</a>
           <a href="https://t.me/s/entrenousclub">Темы и даты встреч</a>
