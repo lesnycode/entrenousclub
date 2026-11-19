@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Практикуйте разговорный французский в Санкт-Петербурге. На очных встречах EntreNous можно начать с коротких реплик и говорить в своём темпе.">
+  <meta name="description" content="EntreNous — французский разговорный клуб в Санкт-Петербурге. На очных встречах играем в мини-игры, говорим о том, что нам интересно, и выбираем свой темп.">
   <link rel="canonical" href="https://entrenousclub.ru/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="EntreNous">
   <meta property="og:url" content="https://entrenousclub.ru/">
   <meta property="og:title" content="EntreNous — французский разговорный клуб в Петербурге">
-  <meta property="og:description" content="Понимаете французский, а в разговоре трудно подобрать слова? В EntreNous можно начать с коротких реплик и говорить в своём темпе.">
+  <meta property="og:description" content="Очные встречи на французском в Санкт-Петербурге. Я готовлю мини-игры, а вы рассказываете о том, что вам интересно, и выбираете свой темп.">
   <meta property="og:image" content="https://entrenousclub.ru/photos/liza-portrait.jpg">
   <meta property="og:image:alt" content="Мой портрет на улице">
   <meta name="theme-color" content="#eeede9">
@@ -52,6 +52,7 @@
   </script>
   <link rel="stylesheet" href="/inner.css">
   <style>
+    body { position: relative; isolation: isolate; overflow-x: clip; padding-block-end: 2.75rem; }
     main { padding-block: 0; }
     header a, footer a { font-size: inherit; }
     .top, .hero { width: min(calc(100% - clamp(2.25rem, 8vw, 5rem)), 70rem); margin-inline: auto; }
@@ -59,13 +60,45 @@
     .top .brand img { width: 2.65rem; }
     .top nav { gap: .25rem 1.25rem; }
     .hero {
+      --edge-gutter: max(clamp(1.125rem, 4vw, 2.5rem), (100vw - 70rem) / 2);
+      position: relative;
       display: grid; grid-template-columns: minmax(0, 1.16fr) minmax(0, 1fr); align-items: center;
       gap: clamp(2rem, 5vw, 4.25rem); padding-block: clamp(2rem, 4.8vw, 3.8rem);
+    }
+    body::before, body::after, .hero::before, .hero::after {
+      content: ""; position: absolute; z-index: -1; aspect-ratio: 1;
+      background: url("/photos/brand-outline.png") center / contain no-repeat;
+      mix-blend-mode: darken; pointer-events: none;
+    }
+    body::before {
+      top: clamp(9.25rem, 18vw, 13.75rem); left: -3.4rem; width: 7.2rem;
+      transform: rotate(-24deg); opacity: .68;
+    }
+    .hero::before {
+      top: .65rem; right: calc(-1 * var(--edge-gutter) - 4.65rem); width: 9.8rem;
+      transform: rotate(19deg); opacity: .74;
+    }
+    .hero::after {
+      bottom: -.2rem; right: calc(-1 * var(--edge-gutter) - 1.15rem); width: 4.05rem;
+      transform: rotate(-38deg); opacity: .53;
+    }
+    body::after {
+      bottom: -3.5rem; left: -3.5rem; width: 7.6rem;
+      transform: rotate(28deg); opacity: .55;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero::after { animation: outline-sway 1.5s ease-in-out .25s; }
+    }
+    @keyframes outline-sway {
+      50% { transform: translate(-3px, -2px) rotate(-31deg); }
     }
     .hero-logo { display: block; width: min(100%, 14rem); height: auto; margin-block-end: .9rem; margin-inline-start: -1.75rem; }
     .hero h1 { font-size: clamp(1.875rem, 3.75vw, 2.75rem); line-height: 1.1; letter-spacing: -.033em; }
     .hero-break-narrow { display: none; }
-    .hero-copy { margin-block: 1rem 1.5rem; max-width: 46ch; }
+    .hero-approach { margin-block: 1.25rem 1.5rem; max-width: 55ch; }
+    .hero-approach h2 { font-size: 1.3rem; }
+    .hero-approach ol { display: grid; gap: .45rem; margin: .6rem 0 0; padding-inline-start: 1.45em; line-height: 1.48; }
+    .hero-approach li::marker, .hero-approach strong { font-weight: 600; }
     .meeting {
       position: relative; isolation: isolate; overflow: hidden;
       display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center;
@@ -83,16 +116,6 @@
     .meeting-cup {
       display: block; width: clamp(2rem, 5.1vw, 3rem); height: auto; mix-blend-mode: multiply;
     }
-    .meeting-wave {
-      position: absolute; z-index: -1; top: -.85rem; right: -.5rem; width: 2.4rem; height: 1.95rem;
-      border: .35rem solid #8da1c9; border-radius: 43% 36% 57% 65%; transform: rotate(29deg);
-    }
-    @media (prefers-reduced-motion: no-preference) {
-      .meeting-wave { animation: meeting-wave 1.8s ease-in-out .25s 2; }
-    }
-    @keyframes meeting-wave {
-      50% { transform: translate(-3px, 3px) rotate(23deg); }
-    }
     .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.25rem; }
     .button { justify-content: center; padding: .55rem 1.3rem; color: white; background: var(--blue); border-radius: .42rem; font-weight: 600; text-decoration: none; }
     .button:hover { background: #234485; }
@@ -102,7 +125,14 @@
     .section-links { grid-column: 2; }
     .about h2, .sections h2 { color: var(--blue); }
     @media (max-width: 780px) {
-      .hero { grid-template-columns: minmax(0, 1fr); max-width: 34rem; gap: 1.6rem; padding-block: 1.55rem 2rem; }
+      .hero {
+        --edge-gutter: max(clamp(1.125rem, 4vw, 2.5rem), (100vw - 34rem) / 2);
+        grid-template-columns: minmax(0, 1fr); max-width: 34rem; gap: 1.6rem; padding-block: 1.55rem 2rem;
+      }
+      .hero::before { right: calc(-1 * var(--edge-gutter) - 2.85rem); width: 6.35rem; }
+      .hero::after { right: calc(-1 * var(--edge-gutter) - 1.65rem); width: 3.6rem; }
+      body::before { top: 7.65rem; left: -3rem; width: 4.95rem; }
+      body::after { bottom: -2.55rem; left: -2.45rem; width: 5.8rem; }
       .hero-logo { width: min(100%, 12.7rem); margin-inline-start: -1.6rem; }
       .hero-portrait { justify-self: start; max-width: 29rem; }
     }
@@ -132,7 +162,14 @@
       <div>
         <img class="hero-logo" src="photos/entrenous-wordmark.png" width="379" height="249" lang="fr" alt="Entre nous. Soit dit en français.">
         <h1 id="club">Французский<br class="hero-break-narrow"> разговорный<br class="hero-break-wide"> клуб<br class="hero-break-narrow"> в Петербурге</h1>
-        <p class="hero-copy">Понимаете французский, а в разговоре трудно подобрать слова? Начните с короткой реплики и говорите в своём темпе.</p>
+        <div class="hero-approach">
+          <h2>Подход клуба</h2>
+          <ol>
+            <li><strong>Структура.</strong> Встречи состоят из продуманных мини-игр, поэтому всегда есть о чём поговорить и не бывает неловких пауз.</li>
+            <li><strong>Самовыражение.</strong> Участники рассказывают о себе и о том, что им интересно.</li>
+            <li><strong>Комфорт.</strong> Участники сами выбирают, насколько активно участвовать, и могут взять паузу в любой момент. Исправления я делаю только по просьбе.</li>
+          </ol>
+        </div>
         <div class="meeting" role="group" aria-label="Ближайшая встреча">
           <time class="meeting-date" datetime="2026-11-21T15:00:00+03:00"><span class="meeting-day">21</span> ноября</time>
           <p class="meeting-details">
@@ -141,7 +178,6 @@
             <span>Сапёрный переулок,&nbsp;16</span>
           </p>
           <img class="meeting-cup" src="photos/coffee-cup.png" width="467" height="712" alt="">
-          <span class="meeting-wave" aria-hidden="true"></span>
         </div>
         <div class="actions">
           <a class="button" href="https://t.me/lisalesny">Записаться</a>
