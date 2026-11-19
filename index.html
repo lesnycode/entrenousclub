@@ -98,8 +98,9 @@
     .hero-break-narrow { display: none; }
     .hero-approach { margin-block: 1.25rem 1.5rem; max-width: 55ch; }
     .hero-approach h2 { font-size: 1.3rem; }
-    .hero-approach ol { display: grid; gap: .45rem; margin: .6rem 0 0; padding-inline-start: 1.45em; line-height: 1.48; }
-    .hero-approach li::marker, .hero-approach strong { font-weight: 600; }
+    .hero-approach ul { display: grid; gap: .65rem; margin: .8rem 0 0; padding: 0; list-style: none; line-height: 1.45; }
+    .hero-approach li { padding-inline-start: .8rem; border-inline-start: 2px solid #bbc6dc; }
+    .hero-approach strong { font-weight: 600; }
     .meeting {
       position: relative; isolation: isolate; overflow: hidden;
       display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center;
@@ -165,11 +166,11 @@
         <h1 id="club">Французский<br class="hero-break-narrow"> разговорный<br class="hero-break-wide"> клуб<br class="hero-break-narrow"> в Петербурге</h1>
         <div class="hero-approach">
           <h2>Подход клуба</h2>
-          <ol>
+          <ul role="list">
             <li><strong>Структура.</strong> Встречи состоят из продуманных мини-игр, поэтому всегда есть о чём поговорить и не бывает неловких пауз.</li>
             <li><strong>Самовыражение.</strong> Участники рассказывают о себе и о том, что им интересно.</li>
             <li><strong>Комфорт.</strong> Участники сами выбирают, насколько активно участвовать, и могут взять паузу в любой момент. Исправления я делаю только по просьбе.</li>
-          </ol>
+          </ul>
         </div>
         <div class="meeting" role="group" aria-label="Ближайшая встреча">
           <time class="meeting-date" datetime="2026-11-21T15:00:00+03:00"><span class="meeting-day">21</span> ноября</time>
