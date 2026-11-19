@@ -53,6 +53,7 @@
   <link rel="stylesheet" href="/inner.css">
   <style>
     main { padding-block: 0; }
+    header a, footer a { font-size: inherit; }
     .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); padding-block: clamp(2rem, 4.5vw, 4rem); }
     .hero-logo { display: block; width: min(100%, 16rem); height: auto; margin-bottom: 1rem; }
     .hero h1 { max-width: 22ch; font-size: clamp(1.875rem, 3vw, 2.75rem); }
@@ -65,13 +66,13 @@
       background: #fbfaf5; color: var(--blue); border: 1px solid #bbc6dc; border-radius: 1.1rem;
     }
     .meeting-date, .meeting-details { display: grid; align-content: center; }
-    .meeting-date { text-align: center; font-size: 1rem; line-height: 1.2; font-weight: 600; }
+    .meeting-date { text-align: center; line-height: 1.2; font-weight: 600; }
     .meeting-day { font-size: clamp(2.65rem, 4vw, 3.4rem); line-height: 1; letter-spacing: -.055em; }
     .meeting-details {
       grid-template-columns: minmax(0, 1fr) auto; column-gap: .45rem;
-      border-inline-start: 1px solid #bbc6dc; padding-inline-start: clamp(.75rem, 2vw, 1.25rem); font-size: 1rem; line-height: 1.4;
+      border-inline-start: 1px solid #bbc6dc; padding-inline-start: clamp(.75rem, 2vw, 1.25rem); line-height: 1.4;
     }
-    .meeting-details strong { margin-bottom: .25rem; }
+    .meeting-details strong { margin-bottom: .25rem; font-weight: 600; }
     .meeting-cup {
       grid-column: 2; grid-row: 1 / span 3; align-self: center;
       display: block; width: clamp(2.25rem, 5.5vw, 3.15rem); height: auto; mix-blend-mode: multiply;
@@ -119,7 +120,7 @@
           <p class="meeting-details">
             <strong>Суббота, 15:00–17:00</strong>
             <span>Кофейня «Коллектив Кофе»</span>
-            <span>Сапёрный переулок, 16</span>
+            <span>Сапёрный переулок,&nbsp;16</span>
             <img class="meeting-cup" src="photos/coffee-cup.png" width="467" height="712" alt="">
           </p>
           <svg class="meeting-wave" viewBox="0 0 68 48" aria-hidden="true" focusable="false">
