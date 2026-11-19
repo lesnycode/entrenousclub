@@ -60,8 +60,8 @@
     main { padding-block: 0; }
     header a, footer a { font-size: inherit; }
     .top, .hero { width: min(calc(100% - clamp(2.25rem, 8vw, 5rem)), 70rem); margin-inline: auto; }
-    .top { min-height: 4rem; padding-block: 0; }
-    .top .brand img { width: 2.65rem; }
+    .top { min-height: 4.5rem; padding-block: 0; }
+    .top .brand img { width: 6.25rem; border-radius: 0; }
     .top nav { gap: .25rem 1.25rem; }
     .hero {
       --edge-gutter: max(clamp(1.125rem, 4vw, 2.5rem), (100vw - 70rem) / 2);
@@ -96,30 +96,35 @@
     @keyframes outline-sway {
       50% { transform: translate(-3px, -2px) rotate(-31deg); }
     }
-    .hero-logo { display: block; width: min(100%, 14rem); height: auto; margin-block-end: .9rem; margin-inline-start: -1.75rem; }
     .hero h1 { font-size: clamp(1.875rem, 3.75vw, 2.75rem); line-height: 1.1; letter-spacing: -.033em; }
     .hero-break-narrow { display: none; }
-    .hero-approach { margin-block: 1.25rem 1.5rem; max-width: 55ch; }
-    .hero-approach h2 { font-size: clamp(1.3rem, 2vw, 1.45rem); }
-    .hero-approach ul { display: grid; gap: .5rem; margin: .8rem 0 0; padding: 0; list-style: none; line-height: 1.43; }
-    .hero-approach li {
+    .approach ul {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.7rem, 2vw, 1.2rem);
+      margin: 1rem 0 0; padding: 0; list-style: none;
+    }
+    .approach li {
       position: relative; isolation: isolate;
-      padding: .55rem .85rem .55rem 2.85rem;
-      background: #e5eaf5; border: 1px solid #d2daea; border-radius: .8rem;
+      padding: clamp(1rem, 2.1vw, 1.45rem); line-height: 1.48;
+      background: var(--blue); color: #f5f7ff; border-radius: 1rem;
     }
-    .hero-approach li:nth-child(2) { background: #f7f6f1; }
-    .hero-approach li::before {
-      content: ""; position: absolute; inset-block-start: .55rem; inset-inline-start: .67rem;
-      width: 1.65rem; aspect-ratio: 1; background: var(--outline-image) center / contain no-repeat;
-      mix-blend-mode: darken; transform: rotate(-14deg); pointer-events: none;
+    .approach li:nth-child(2) { background: #25498f; }
+    .approach li:nth-child(3) { background: #345da9; }
+    .approach li::before {
+      content: ""; position: absolute; z-index: -1; inset-block-start: .65rem; inset-inline-end: .65rem;
+      width: 2.65rem; aspect-ratio: 1; background: var(--outline-image) center / contain no-repeat;
+      filter: invert(1) grayscale(1); mix-blend-mode: screen; opacity: .62;
+      transform: rotate(-14deg); pointer-events: none;
     }
-    .hero-approach li:nth-child(2)::before { transform: rotate(21deg); }
-    .hero-approach li:nth-child(3)::before { transform: rotate(-32deg); }
-    .hero-approach strong { color: var(--blue); font-weight: 600; }
+    .approach li:nth-child(2)::before { transform: rotate(21deg); }
+    .approach li:nth-child(3)::before { transform: rotate(-32deg); }
+    .approach strong {
+      display: block; padding-inline-end: 2.15rem; margin-block-end: .55rem;
+      color: white; font-size: 1.22rem; font-weight: 600; line-height: 1.2; overflow-wrap: anywhere;
+    }
     .meeting {
       position: relative; isolation: isolate; overflow: hidden;
       display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center;
-      column-gap: clamp(.65rem, 1.8vw, 1.15rem); max-width: 29rem; margin-bottom: .85rem;
+      gap: .75rem clamp(.65rem, 1.8vw, 1.15rem); width: 100%; max-width: 29rem;
       padding: 1rem clamp(.8rem, 2vw, 1.25rem);
       background: #fbfaf5; border: 1px solid #c2cad9; border-radius: 1.1rem;
     }
@@ -133,14 +138,19 @@
     .meeting-cup {
       display: block; width: clamp(2rem, 5.1vw, 3rem); height: auto; mix-blend-mode: multiply;
     }
-    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.25rem; }
-    .button { justify-content: center; padding: .55rem 1.3rem; color: white; background: var(--blue); border-radius: .42rem; font-weight: 600; text-decoration: none; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+      grid-column: 2 / -1; justify-self: start; margin-inline-start: clamp(.65rem, 1.8vw, 1.15rem);
+      padding: .55rem 1.3rem; color: white; background: var(--blue); border-radius: .42rem; font-weight: 600; text-decoration: none;
+    }
     .button:hover { background: #234485; }
-    .meeting-calendar { color: var(--ink); text-decoration-color: #8a8b93; text-underline-offset: .22em; }
-    .hero-portrait { display: block; justify-self: center; width: 100%; max-width: 33rem; height: auto; border-radius: 17%; }
-    .sections section, .about { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.55fr); align-items: baseline; gap: .75rem 2.5rem; padding-block: clamp(1.6rem, 3vw, 2.5rem); border-top: 1px solid var(--line); }
-    .section-links { grid-column: 2; }
-    .about h2, .sections h2 { color: var(--blue); }
+    .approach, .sections section, .about { padding-block: clamp(1.6rem, 3vw, 2.5rem); border-top: 1px solid var(--line); }
+    .sections section, .about { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.55fr); align-items: baseline; gap: .75rem 2.5rem; }
+    .section-links { display: flex; flex-wrap: wrap; column-gap: 1.25rem; grid-column: 2; }
+    .approach h2, .about h2, .sections h2 { color: var(--blue); }
+    .about { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; }
+    .about p { margin-block-start: .75rem; }
+    .about-portrait { display: block; justify-self: end; width: 100%; max-width: 24rem; height: auto; border-radius: 17%; }
     @media (max-width: 780px) {
       .hero {
         --edge-gutter: max(clamp(1.125rem, 4vw, 2.5rem), (100vw - 34rem) / 2);
@@ -148,28 +158,26 @@
       }
       .hero::before { right: calc(-1 * var(--edge-gutter) - 2.85rem); width: 6.35rem; }
       .hero::after { right: calc(-1 * var(--edge-gutter) - 1.65rem); width: 3.6rem; }
-      body::before { top: 7.65rem; left: -3rem; width: 4.95rem; }
+      body::before { top: 12.25rem; left: -3.2rem; width: 4.95rem; }
       body::after { bottom: -2.55rem; left: -2.45rem; width: 5.8rem; }
-      .hero-logo { width: min(100%, 12.7rem); margin-inline-start: -1.6rem; }
-      .hero-portrait { justify-self: start; max-width: 29rem; }
+      .approach ul { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
       .sections section, .about { grid-template-columns: 1fr; gap: .55rem; }
       .section-links { grid-column: auto; }
+      .about-portrait { justify-self: start; margin-block-start: .6rem; }
     }
     @media (max-width: 500px) {
       .top nav { column-gap: .8rem; }
       .hero-break-wide { display: none; }
       .hero-break-narrow { display: initial; }
-      .hero-approach li { padding-inline: 2.45rem .65rem; }
-      .hero-approach li::before { inset-inline-start: .5rem; width: 1.52rem; }
     }
   </style>
 </head>
 <body>
   <header class="wrap top" id="top">
     <a href="#top" class="brand" aria-label="EntreNous, начало страницы">
-      <img src="club.jpg" width="64" height="64" alt="">
+      <img src="photos/entrenous-wordmark.png" width="379" height="249" lang="fr" alt="Entre nous. Soit dit en français.">
     </a>
     <nav aria-label="Навигация">
       <a href="/#rencontres">Встречи</a>
@@ -178,32 +186,25 @@
   </header>
   <main>
     <section class="hero" aria-labelledby="club">
-      <div>
-        <img class="hero-logo" src="photos/entrenous-wordmark.png" width="379" height="249" lang="fr" alt="Entre nous. Soit dit en français.">
-        <h1 id="club">Французский<br class="hero-break-narrow"> разговорный<br class="hero-break-wide"> клуб<br class="hero-break-narrow"> в Петербурге</h1>
-        <div class="hero-approach">
-          <h2>Подход клуба</h2>
-          <ul role="list">
-            <li><strong>Структура.</strong> Встречи состоят из продуманных мини-игр, поэтому всегда есть о чём поговорить и не бывает неловких пауз.</li>
-            <li><strong>Самовыражение.</strong> Участники рассказывают о себе и о том, что им интересно.</li>
-            <li><strong>Комфорт.</strong> Участники сами выбирают, насколько активно участвовать, и могут взять паузу в любой момент. Исправления я делаю только по просьбе.</li>
-          </ul>
-        </div>
-        <div class="meeting" role="group" aria-label="Ближайшая встреча">
-          <time class="meeting-date" datetime="2026-11-21T15:00:00+03:00"><span class="meeting-day">21</span> ноября</time>
-          <p class="meeting-details">
-            <strong>Суббота, 15:00–17:00</strong>
-            <span>Кофейня «Коллектив Кофе»</span>
-            <span>Сапёрный переулок,&nbsp;16</span>
-          </p>
-          <img class="meeting-cup" src="photos/coffee-cup.png" width="467" height="712" alt="">
-        </div>
-        <div class="actions">
-          <a class="button" href="https://t.me/lisalesny">Записаться</a>
-          <a class="meeting-calendar" href="https://t.me/s/entrenousclub">Темы и даты встреч</a>
-        </div>
+      <h1 id="club">Французский<br class="hero-break-narrow"> разговорный<br class="hero-break-wide"> клуб<br class="hero-break-narrow"> в Петербурге</h1>
+      <div class="meeting" role="group" aria-label="Ближайшая встреча">
+        <time class="meeting-date" datetime="2026-11-21T15:00:00+03:00"><span class="meeting-day">21</span> ноября</time>
+        <p class="meeting-details">
+          <strong>Суббота, 15:00–17:00</strong>
+          <span>Кофейня «Коллектив Кофе»</span>
+          <span>Сапёрный переулок,&nbsp;16</span>
+        </p>
+        <img class="meeting-cup" src="photos/coffee-cup.png" width="467" height="712" alt="">
+        <a class="button" href="https://t.me/lisalesny">Записаться</a>
       </div>
-      <img class="hero-portrait" src="photos/liza-portrait.jpg" width="529" height="529" alt="Мой портрет на улице">
+    </section>
+    <section class="wrap approach" aria-labelledby="approach-title">
+      <h2 id="approach-title">Подход клуба</h2>
+      <ul role="list">
+        <li><strong>Структура.</strong> Встречи состоят из продуманных мини-игр, поэтому всегда есть о чём поговорить и не бывает неловких пауз.</li>
+        <li><strong>Самовыражение.</strong> Участники рассказывают о себе и о том, что им интересно.</li>
+        <li><strong>Комфорт.</strong> Участники сами выбирают, насколько активно участвовать, и могут взять паузу в любой момент. Исправления я делаю только по просьбе.</li>
+      </ul>
     </section>
     <div class="wrap sections">
       <section id="rencontres">
@@ -211,12 +212,16 @@
         <p>Собираемся очно в Санкт-Петербурге. Я готовлю вопросы и мини-игры по теме вечера. Можно ответить парой фраз, поделиться историей или взять паузу, если нужно время подобрать слова.</p>
         <div class="section-links">
           <a href="/faq/#uroven">Подойдёт ли мне клуб?</a>
+          <a href="https://t.me/s/entrenousclub">Темы и даты встреч</a>
         </div>
       </section>
     </div>
     <section class="wrap about" id="about" aria-labelledby="about-title">
-      <h2 id="about-title">Обо мне</h2>
-      <p>Меня зовут Лиза, и я пять лет жила во Франции, где училась и работала. Мне стало легче говорить, когда друзья давали мне время подобрать слова. Я создала EntreNous, чтобы в Петербурге тоже можно было говорить по-французски в своём темпе.</p>
+      <div>
+        <h2 id="about-title">Обо мне</h2>
+        <p>Меня зовут Лиза, и я пять лет жила во Франции, где училась и работала. Мне стало легче говорить, когда друзья давали мне время подобрать слова. Я создала EntreNous, чтобы в Петербурге тоже можно было говорить по-французски в своём темпе.</p>
+      </div>
+      <img class="about-portrait" src="photos/liza-portrait.jpg" width="529" height="529" loading="lazy" alt="Мой портрет на улице">
     </section>
   </main>
   <footer class="wrap foot">
