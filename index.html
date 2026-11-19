@@ -113,21 +113,11 @@
     .sections p { margin-bottom: 0; }
     .sections a { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; }
     .section-links { display: grid; justify-items: start; }
+    .practice-link { padding-block: .5rem; border-bottom: 1px solid var(--line); }
     .foot p { margin: 0; color: var(--blue); font: 500 1rem/1.4 var(--sans); }
-    .about { padding-block: clamp(2.5rem, 6vw, 5rem); border-bottom: 1px solid var(--line); }
-    .about h2 { color: var(--blue); margin-bottom: 1.25rem; }
-    .about-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-      gap: 1.25rem clamp(2rem, 6vw, 5rem);
-      align-items: start;
-    }
-    .about-row + .about-row { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
-    .about p { max-width: 62ch; margin-bottom: 1em; line-height: 1.62; }
-    .about p:last-child { margin-bottom: 0; }
-    .about .opening { font: 500 clamp(1.35rem, 2vw, 1.75rem)/1.35 var(--sans); letter-spacing: -.012em; }
-    .about img { display: block; width: 100%; height: auto; }
-    .about .format { max-width: 26ch; margin-top: 0; color: var(--blue); font-weight: 600; }
+    .about { padding-block: clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--line); }
+    .about h2 { color: var(--blue); margin-bottom: .75rem; }
+    .about p { max-width: 60ch; margin-bottom: 0; }
     @media (max-width: 720px) {
       .wrap { width: min(calc(100% - 2.5rem), 34rem); }
       .top { padding-block: .5rem; border: 0; }
@@ -143,15 +133,8 @@
       .sections { border: 0; }
       .sections section { grid-template-columns: 1fr; gap: .5rem; padding-block: 1.25rem; }
       .sections section:first-child { padding-top: 0; }
-      .sections section:last-child { border-bottom: 0; }
       .sections h2, .about h2 { font-size: 1.65rem; }
       .sections a { font-size: .95rem; }
-      .about { padding-block: 2.25rem; }
-      .about h2 { margin-bottom: .75rem; }
-      .about-row { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
-      .about-row + .about-row { margin-top: 1.5rem; }
-      .about .format { display: inline-flex; align-items: center; min-height: 44px; }
-      .about p { line-height: 1.55; }
     }
   </style>
 </head>
@@ -188,46 +171,13 @@
           <a href="/faq/#uroven">Подойдёт ли мне клуб?</a>
         </div>
       </section>
-      <section id="materiaux">
-        <h2>Материалы</h2>
-        <p>Фразы для живого разговора, лексика к темам встреч и короткие заметки по грамматике.</p>
-        <div class="section-links">
-          <a href="/razgovornaya-praktika/">Как начать говорить по-французски</a>
-          <a href="https://t.me/entrenousclub/26">Лексика и грамматика к теме «Дружба»</a>
-        </div>
-      </section>
+      <div id="materiaux" class="practice-link">
+        <a href="/razgovornaya-praktika/">Как начать говорить по-французски</a>
+      </div>
     </div>
     <section class="about" id="about" aria-labelledby="about-title">
-      <div class="about-row">
-        <div>
-          <h2 id="about-title">Обо мне</h2>
-          <p class="opening">Меня зовут Лиза, я пять лет жила во Франции, училась, работала, решала вопросики и дружила на французском языке.</p>
-        </div>
-      </div>
-      <div class="about-row">
-        <div>
-          <p>Первый год во Франции был самый непростой. Я только закончила французскую гимназию в Петербурге и приехала учиться в Дижон в школу, куда обычно не берут иностранцев (у меня было мощное досье, <s>но это не помогло</s>). Я сразу столкнулась с ворохом сложностей, от поиска жилья и оформления документов до учёбы в очень конкурентной школе (два устных экзамена и одна диссертация каждую неделю, по результатам которых составляют рейтинг).</p>
-          <p>Мне казалось, что я неплохо знаю французский, но для серьёзной учёбы и расслабленного дружеского общения этого было недостаточно. Я серьёзно задумалась о том, что идея учиться во Франции была не такой и хорошей.</p>
-          <p>Но когда рядом появились франкоговорящие друзья, которые терпеливо ждали, когда я подберу нужные слова, вежливо поправляли, когда действительно нужно, всё изменилось.</p>
-        </div>
-        <img src="photos/student-card.webp" width="1280" height="960" loading="lazy" alt="Студенческая карта Université Paris Dauphine за 2023–2024 год, частично закрытая маркером">
-      </div>
-      <div class="about-row">
-        <div>
-          <p>Через год я уже переехала в Париж, поступила там в хороший университет и нашла подработку, спустя три года поступила на крутую магистратуру и устроилась во французскую айти-компанию. Встретила множество интересных людей в самых разных сферах. И всего этого не вышло бы, не будь в самом начале пути друзей, с которыми было <strong><em>комфортно</em></strong> начинать говорить по-французски.</p>
-        </div>
-        <img src="photos/bootcamp.webp" width="1170" height="574" loading="lazy" alt="Групповое фото участников буткемпа IBM Envizi">
-      </div>
-      <div class="about-row">
-        <div>
-          <p>Я хочу собрать вместе людей, которые любят французский язык и будут поддерживать друг друга в его изучении. Для этого я собираю французский разговорный клуб <strong lang="fr">Entre nous.</strong></p>
-          <p>Основные принципы <s>бойцовского</s> клуба — структурированность, самовыражение, безнапряжность.</p>
-          <p>Структурированность означает, что для каждой встречи я придумываю много разных мини-игр, чтобы всегда было о чём поговорить и не возникало неловких пауз.</p>
-          <p>Самовыражение — участники как можно больше рассказывают о себе и своих интересах.</p>
-          <p>И всё без напряга — без обязаловки, лишних исправлений, с возможностью взять паузу в любой момент.</p>
-        </div>
-        <a class="format" href="/faq/#stoimost">Сколько стоит встреча?</a>
-      </div>
+      <h2 id="about-title">Обо мне</h2>
+      <p>Меня зовут Лиза, и я пять лет жила во Франции, где училась и работала. Мне стало легче говорить, когда друзья давали мне время подобрать слова. Я создала EntreNous, чтобы в Петербурге тоже можно было говорить по-французски в своём темпе.</p>
     </section>
   </main>
   <footer class="wrap foot">
