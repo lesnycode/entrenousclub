@@ -67,8 +67,15 @@
     .meeting-date, .meeting-details { display: grid; align-content: center; }
     .meeting-date { text-align: center; font-size: 1rem; line-height: 1.2; font-weight: 600; }
     .meeting-day { font-size: clamp(2.65rem, 4vw, 3.4rem); line-height: 1; letter-spacing: -.055em; }
-    .meeting-details { border-inline-start: 1px solid #bbc6dc; padding-inline-start: clamp(.75rem, 2vw, 1.25rem); font-size: 1rem; line-height: 1.4; }
-    .meeting-details strong { margin-bottom: .25rem; padding-inline-end: 1.1rem; }
+    .meeting-details {
+      grid-template-columns: minmax(0, 1fr) auto; column-gap: .45rem;
+      border-inline-start: 1px solid #bbc6dc; padding-inline-start: clamp(.75rem, 2vw, 1.25rem); font-size: 1rem; line-height: 1.4;
+    }
+    .meeting-details strong { margin-bottom: .25rem; }
+    .meeting-cup {
+      grid-column: 2; grid-row: 1 / span 3; align-self: center;
+      display: block; width: clamp(2.25rem, 5.5vw, 3.15rem); height: auto; mix-blend-mode: multiply;
+    }
     .meeting-wave { position: absolute; z-index: -1; top: -.4rem; right: -.45rem; width: 3.4rem; height: 2.4rem; color: #859bc8; }
     @media (prefers-reduced-motion: no-preference) {
       .meeting-wave { animation: meeting-wave 1.8s ease-in-out .25s 2; }
@@ -116,6 +123,7 @@
             <strong>Суббота, 15:00–17:00</strong>
             <span>Кофейня «Коллектив Кофе»</span>
             <span>Сапёрный переулок, 16</span>
+            <img class="meeting-cup" src="photos/coffee-cup.png" width="467" height="712" alt="">
           </p>
           <svg class="meeting-wave" viewBox="0 0 68 48" aria-hidden="true" focusable="false">
             <path d="M5 -9C6 12 24 1 29 18S48 44 57 30Q63 19 78 25" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
