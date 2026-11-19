@@ -53,7 +53,10 @@
   <link rel="stylesheet" href="/inner.css">
   <style>
     html { background: var(--paper); overflow-x: clip; }
-    body { position: relative; isolation: isolate; overflow: clip; padding-block-end: 2.75rem; }
+    body {
+      --outline-image: url("/photos/brand-outline.png");
+      position: relative; isolation: isolate; overflow: clip; padding-block-end: 2.75rem;
+    }
     main { padding-block: 0; }
     header a, footer a { font-size: inherit; }
     .top, .hero { width: min(calc(100% - clamp(2.25rem, 8vw, 5rem)), 70rem); margin-inline: auto; }
@@ -68,7 +71,7 @@
     }
     body::before, body::after, .hero::before, .hero::after {
       content: ""; position: absolute; z-index: -1; aspect-ratio: 1;
-      background: url("/photos/brand-outline.png") center / contain no-repeat;
+      background: var(--outline-image) center / contain no-repeat;
       mix-blend-mode: darken; pointer-events: none;
     }
     body::before {
@@ -97,10 +100,22 @@
     .hero h1 { font-size: clamp(1.875rem, 3.75vw, 2.75rem); line-height: 1.1; letter-spacing: -.033em; }
     .hero-break-narrow { display: none; }
     .hero-approach { margin-block: 1.25rem 1.5rem; max-width: 55ch; }
-    .hero-approach h2 { font-size: 1.3rem; }
-    .hero-approach ul { display: grid; gap: .65rem; margin: .8rem 0 0; padding: 0; list-style: none; line-height: 1.45; }
-    .hero-approach li { padding-inline-start: .8rem; border-inline-start: 2px solid #bbc6dc; }
-    .hero-approach strong { font-weight: 600; }
+    .hero-approach h2 { font-size: clamp(1.3rem, 2vw, 1.45rem); }
+    .hero-approach ul { display: grid; gap: .5rem; margin: .8rem 0 0; padding: 0; list-style: none; line-height: 1.43; }
+    .hero-approach li {
+      position: relative; isolation: isolate;
+      padding: .55rem .85rem .55rem 2.85rem;
+      background: #e5eaf5; border: 1px solid #d2daea; border-radius: .8rem;
+    }
+    .hero-approach li:nth-child(2) { background: #f7f6f1; }
+    .hero-approach li::before {
+      content: ""; position: absolute; inset-block-start: .55rem; inset-inline-start: .67rem;
+      width: 1.65rem; aspect-ratio: 1; background: var(--outline-image) center / contain no-repeat;
+      mix-blend-mode: darken; transform: rotate(-14deg); pointer-events: none;
+    }
+    .hero-approach li:nth-child(2)::before { transform: rotate(21deg); }
+    .hero-approach li:nth-child(3)::before { transform: rotate(-32deg); }
+    .hero-approach strong { color: var(--blue); font-weight: 600; }
     .meeting {
       position: relative; isolation: isolate; overflow: hidden;
       display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center;
@@ -146,6 +161,8 @@
       .top nav { column-gap: .8rem; }
       .hero-break-wide { display: none; }
       .hero-break-narrow { display: initial; }
+      .hero-approach li { padding-inline: 2.45rem .65rem; }
+      .hero-approach li::before { inset-inline-start: .5rem; width: 1.52rem; }
     }
   </style>
 </head>
