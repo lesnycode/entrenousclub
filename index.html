@@ -50,91 +50,27 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="/inner.css">
   <style>
-    :root {
-      color-scheme: light;
-      --paper: #eeede9;
-      --ink: #25273a;
-      --blue: #243f91;
-      --line: #cfd2c9;
-      --sans: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", sans-serif;
-    }
-    * { box-sizing: border-box; }
-    ::selection { background: #d9e0f2; color: var(--ink); }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font: 400 1.0625rem/1.55 var(--sans);
-    }
-    a { color: var(--blue); text-underline-offset: .22em; }
-    a:hover { text-decoration-thickness: 2px; }
-    a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
-    .wrap { width: min(100% - 3rem, 67rem); margin-inline: auto; }
-    .top, .foot {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: .5rem 1.5rem;
-      padding-block: .8rem;
-    }
-    .top { border-bottom: 1px solid var(--line); }
-    .brand { display: inline-flex; flex: none; }
-    .brand img { display: block; width: 4rem; height: 4rem; border-radius: 50%; }
-    nav { display: flex; flex-wrap: wrap; gap: 0 clamp(.75rem, 3vw, 2rem); }
-    nav a, .foot a { display: inline-flex; min-height: 44px; align-items: center; font-size: .9rem; }
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
-      align-items: center;
-      gap: clamp(2rem, 7vw, 6rem);
-      padding-block: clamp(2.25rem, 6vw, 5.5rem);
-    }
-    h1, h2, p { margin-top: 0; }
-    .hero-logo { display: block; width: min(100%, 22rem); height: auto; margin-bottom: 1.25rem; }
-    h1 { max-width: 25ch; margin-bottom: .8rem; font: 550 clamp(1.5rem, 2.45vw, 2rem)/1.19 var(--sans); letter-spacing: -.02em; text-wrap: balance; }
-    .hero-copy { max-width: 37ch; margin-bottom: 1rem; }
-    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.35rem; }
-    .actions a { display: inline-flex; min-height: 44px; align-items: center; }
-    .button { padding: .55rem .95rem; color: white; background: var(--blue); font-weight: 650; text-decoration: none; }
-    .button:hover { background: #192f72; }
-    .hero-portrait { display: block; width: 100%; height: auto; background: #e3e5dd; }
-    .sections { border-top: 1px solid var(--line); }
-    .sections section {
-      display: grid;
-      grid-template-columns: minmax(9rem, .65fr) minmax(0, 1fr) minmax(0, 1fr);
-      align-items: baseline;
-      gap: .5rem 1.5rem;
-      border-bottom: 1px solid var(--line);
-      padding-top: 1.4rem;
-      padding-bottom: 1.4rem;
-    }
-    h2 { margin-bottom: 0; font: 650 clamp(1.65rem, 3vw, 2.25rem)/1.16 var(--sans); letter-spacing: -.025em; }
-    .sections p { margin-bottom: 0; }
-    .sections a { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; }
-    .section-links { display: grid; justify-items: start; }
-    .practice-link { padding-block: .5rem; border-bottom: 1px solid var(--line); }
-    .foot p { margin: 0; color: var(--blue); font: 500 1rem/1.4 var(--sans); }
-    .about { padding-block: clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--line); }
-    .about h2 { color: var(--blue); margin-bottom: .75rem; }
-    .about p { max-width: 60ch; margin-bottom: 0; }
+    main { padding-block: 0; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); padding-block: clamp(2rem, 4.5vw, 4rem); }
+    .hero-logo { display: block; width: min(100%, 16rem); height: auto; margin-bottom: 1rem; }
+    .hero h1 { max-width: 22ch; font-size: clamp(1.875rem, 3vw, 2.75rem); }
+    .hero-copy { margin-block: .85rem 1.35rem; max-width: 42ch; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.25rem; }
+    .button { justify-content: center; padding: .6rem 1.35rem; color: white; background: var(--blue); border-radius: .4rem; font-weight: 600; text-decoration: none; }
+    .button:hover { background: #213e7b; }
+    .hero-portrait { display: block; width: 100%; height: auto; aspect-ratio: 1.42; object-fit: cover; object-position: center; border-radius: .45rem; }
+    .sections section, .about { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.55fr); align-items: baseline; gap: .75rem 2.5rem; padding-block: clamp(1.6rem, 3vw, 2.5rem); border-top: 1px solid var(--line); }
+    .section-links { grid-column: 2; }
+    .practice-link { border-top: 1px solid var(--line); padding-block: .6rem; }
+    .about h2, .sections h2 { color: var(--blue); }
     @media (max-width: 720px) {
-      .wrap { width: min(calc(100% - 2.5rem), 34rem); }
-      .top { padding-block: .5rem; border: 0; }
-      .brand { min-width: 44px; min-height: 44px; align-items: center; }
-      .brand img { width: 2.5rem; height: 2.5rem; }
-      .top nav { gap: 1.15rem; }
-      .top nav a { color: var(--ink); text-decoration: none; }
-      .section-shortcut { display: none; }
-      .hero { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; padding-block: 1.75rem 2rem; }
-      .hero-logo { width: min(100%, 17.5rem); margin-inline: auto; }
-      h1 { max-width: 23ch; font-size: 1.5rem; }
-      .button { justify-content: center; padding: .72rem 1.2rem; }
-      .sections { border: 0; }
-      .sections section { grid-template-columns: 1fr; gap: .5rem; padding-block: 1.25rem; }
-      .sections section:first-child { padding-top: 0; }
-      .sections h2, .about h2 { font-size: 1.65rem; }
-      .sections a { font-size: .95rem; }
+      .hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-block: 1.65rem; }
+      .hero-logo { width: min(100%, 14.5rem); margin: 0 auto 1.15rem; }
+      .hero-portrait { aspect-ratio: auto; }
+      .sections section, .about { grid-template-columns: 1fr; gap: .55rem; }
+      .section-links { grid-column: auto; }
     }
   </style>
 </head>
@@ -144,10 +80,9 @@
       <img src="club.jpg" width="64" height="64" alt="">
     </a>
     <nav aria-label="Навигация">
-      <a class="section-shortcut" href="#rencontres">Встречи</a>
-      <a class="section-shortcut" href="#materiaux">Материалы</a>
-      <a href="#about">Обо мне</a>
-      <a href="/faq/">Вопросы и ответы</a>
+      <a href="/#rencontres">Встречи</a>
+      <a href="/faq/">Первая встреча</a>
+      <a href="/razgovornaya-praktika/">Практика</a>
     </nav>
   </header>
   <main class="wrap">
@@ -158,6 +93,7 @@
         <p class="hero-copy">Понимаете французский, а в разговоре трудно подобрать слова? Начните с короткой реплики и говорите в своём темпе.</p>
         <div class="actions">
           <a class="button" href="https://t.me/lisalesny">Записаться</a>
+          <a href="https://t.me/s/entrenousclub">Темы и даты встреч</a>
         </div>
       </div>
       <img class="hero-portrait" src="photos/liza.webp" width="1290" height="706" alt="Мой портрет из кадра L’Oréal Paris">
@@ -167,7 +103,6 @@
         <h2>Как проходят встречи</h2>
         <p>Собираемся очно в Санкт-Петербурге. Я готовлю вопросы и мини-игры по теме вечера. Можно ответить парой фраз, поделиться историей или взять паузу, если нужно время подобрать слова.</p>
         <div class="section-links">
-          <a href="https://t.me/s/entrenousclub">Темы и даты встреч</a>
           <a href="/faq/#uroven">Подойдёт ли мне клуб?</a>
         </div>
       </section>
